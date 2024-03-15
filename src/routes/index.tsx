@@ -8,6 +8,7 @@ export default component$(() => {
       <div class="container">
          <header>
             <h1 class="logo">
+               <span class="invisible">The morent logo</span>
                <a href="/">
                   <ImgLogo alt="LOGO" />
                </a>
@@ -22,38 +23,33 @@ export default component$(() => {
                      type="search"
                      placeholder="Search something here"
                   />
-                  <button class="form-filter">
-                     <img src="/filter.svg" alt="" />
-                  </button>
                </label>
+               <button class="form-filter">
+                  <img src="/filter.svg" alt="" />
+               </button>
             </form>
-            <div class="profile">
-               <ul class="profile-items">
-                  <li>
-                     <a href="/" aria-label="favorites" class="favorites">
-                        <img src="/heart.svg" alt="" />
-                     </a>
-                  </li>
-                  <li>
-                     <a
-                        href="/"
-                        aria-label="notifications"
-                        class="notifications">
-                        <img src="/notification.svg" alt="" />
-                     </a>
-                  </li>
-                  <li>
-                     <a href="/" aria-label="settings" class="settings">
-                        <img src="/setting-2.svg" alt="" />
-                     </a>
-                  </li>
-                  <li>
-                     <a href="/" aria-label="profile" class="avatar">
-                        <ImgAvatar alt="" />
-                     </a>
-                  </li>
-               </ul>
-            </div>
+            <ul class="profile">
+               <li>
+                  <a href="/" aria-label="favorites" class="favorites">
+                     <img src="/heart.svg" alt="" />
+                  </a>
+               </li>
+               <li>
+                  <a href="/" aria-label="notifications" class="notifications">
+                     <img src="/notification.svg" alt="" />
+                  </a>
+               </li>
+               <li>
+                  <a href="/" aria-label="settings" class="settings">
+                     <img src="/setting-2.svg" alt="" />
+                  </a>
+               </li>
+               <li>
+                  <a href="/" aria-label="profile" class="avatar">
+                     <ImgAvatar alt="" />
+                  </a>
+               </li>
+            </ul>
          </header>
          <div class="content">
             <form class="banners">
@@ -63,7 +59,7 @@ export default component$(() => {
                      Ease of doing a car rental safely and reliably. Of course
                      at a low price.
                   </div>
-                  <a class="rental-link" href="/">
+                  <a class="rental-link" href="/" aria-label="{Car name}">
                      Rental Car
                   </a>
                   <div class="image">
@@ -74,12 +70,14 @@ export default component$(() => {
                   </div>
                </article>
                <article>
-                  <h2 class="title-card">The Best Platform for Car Rental</h2>
+                  <h2 class="title-card">
+                     Easy way to rent a car at a low price
+                  </h2>
                   <div class="desc">
-                     Ease of doing a car rental safely and reliably. Of course
-                     at a low price.
+                     Providing cheap car rental services and safe and
+                     comfortable facilities.
                   </div>
-                  <a class="rental-link" href="/">
+                  <a class="rental-link" href="/" aria-label="{Car name}">
                      Rental Car
                   </a>
                   <div class="image">
@@ -153,744 +151,804 @@ export default component$(() => {
             </form>
             <section class="products">
                <div class="products__category">
-                  <h3 class="category-name">Popular Car</h3>
+                  <h2 class="category-name">Popular Car</h2>
                   <a href="/" class="showAll">
                      View All
                   </a>
                </div>
-               <div class="products__container">
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
+               <ul class="products__container">
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
+                           </div>
                         </div>
-                        <div>
-                           <dt class="info-icon">
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
+                        </div>
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites like"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
+                           </div>
                         </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
                         </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites like"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
+                           </div>
                         </div>
-                        <div>
-                           <dt class="info-icon">
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
+                        </div>
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
+                           </div>
                         </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
                         </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
-                              />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
-                              />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
-                        </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
-                        </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
-                              />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
-                              />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
-                        </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
-                        </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-               </div>
+                     </article>
+                  </li>
+               </ul>
             </section>
 
             <section class="products">
                <div class="products__category">
-                  <h3 class="category-name">Recomendation Car</h3>
+                  <h2 class="category-name">Recomendation Car</h2>
                   <a href="/" class="showAll invisible">
                      View All
                   </a>
                </div>
-               <div class="products__container">
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites like"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
+               <ul class="products__container">
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
+                           </div>
                         </div>
-                        <div>
-                           <dt class="info-icon">
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
+                        </div>
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites like"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
+                           </div>
                         </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
                         </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
+                           </div>
                         </div>
-                        <div>
-                           <dt class="info-icon">
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
+                        </div>
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
+                           </div>
                         </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
                         </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
+                           </div>
                         </div>
-                        <div>
-                           <dt class="info-icon">
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
+                        </div>
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites like"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
+                           </div>
                         </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
                         </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites like"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
+                           </div>
                         </div>
-                        <div>
-                           <dt class="info-icon">
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
+                        </div>
+                     </article>
+                  </li>
+                  <li>
+                     <article class="product">
+                        <form class="product__top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image">
+                           <div>
                               <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
                               />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
+                           </div>
                         </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
+                        <dl class="product__info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
                         </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
-                              />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
-                              />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
-                        </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
-                        </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites like"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
-                              />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
-                              />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
-                        </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
-                        </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
-                              />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
-                              />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
-                        </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
-                        </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-                  <article class="product">
-                     <form class="product__top">
-                        <h3 class="product__name">Koenigsegg</h3>
-                        <button
-                           aria-label="Add to favorites"
-                           class="product__favourites like"></button>
-                        <span class="product__category">Sport</span>
-                     </form>
-                     <div class="product__image">
-                        <div>
-                           <img
-                              src="/car-a1.png"
-                              alt="Some text describing the picture"
-                           />
-                        </div>
-                     </div>
-                     <dl class="product__info">
-                        <div>
-                           <dt class="info-icon">
-                              <img src="/gas-station.svg" aria-label="Volume" />
-                           </dt>
-                           <dd class="info-title">
-                              90<abbr title="liter">L</abbr>
-                           </dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/Car-wheel.svg"
-                                 aria-label="The type of control is "
-                              />
-                           </dt>
-                           <dd class="info-title">Manual</dd>
-                        </div>
-                        <div>
-                           <dt class="info-icon">
-                              <img
-                                 src="/profile-2user.svg"
-                                 aria-label="Capacity for"
-                              />
-                           </dt>
-                           <dd class="info-title">2 People</dd>
-                        </div>
-                     </dl>
-                     <div class="product__bottom">
-                        <div class="product__price">
-                           <span>
-                              <b>$99.00/ </b>
-                              <small>day</small>
-                           </span>
-                           <s class="old-price ">$100.00</s>
-                        </div>
-                        <a
-                           href="/"
-                           aria-label="Rent a car {Car name}"
-                           class="product__rental">
-                           Rent Now
-                        </a>
-                     </div>
-                  </article>
-               </div>
+                     </article>
+                  </li>
+               </ul>
                <div class="showMore">
                   <a href="/" class="showMore-btn">
                      Show more car
@@ -900,7 +958,7 @@ export default component$(() => {
             </section>
          </div>
          <footer>
-            <section class="top">
+            <div class="top">
                <div class="information">
                   <h2>
                      <a href="/" class="logo">
@@ -989,14 +1047,14 @@ export default component$(() => {
                      </ul>
                   </li>
                </menu>
-            </section>
-            <section class="bottom">
+            </div>
+            <div class="bottom">
                <div class="copyright">© 2022 MORENT. All rights reserved</div>
                <div class="policy">
                   <a href="/">Privacy & Policy</a>
                   <a href="/">Terms & Condition</a>
                </div>
-            </section>
+            </div>
          </footer>
       </div>
    );

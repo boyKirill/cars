@@ -25,17 +25,22 @@ header {
    display: flex;
    align-items: center;
 }
+.logo a {
+   display: flex;
+   align-items: center;
+}
 .form {
    grid-area: form;
+   display: grid;
+   grid-template-columns: 1fr auto;
+   border: 1px solid #ccc;
+   border-radius: 25px;
 }
 
 .form label {
    display: grid;
-   grid-template-columns: auto 1fr auto;
-   grid-template-areas: "loop input filter";
+   grid-template-columns: auto 1fr;
    align-items: center;
-   border: 1px solid #ccc;
-   border-radius: 25px;
 }
 .loop,
 .form-filter {
@@ -63,13 +68,7 @@ header {
    gap: 20px;
 }
 
-.profile-items {
-   display: flex;
-   align-items: center;
-   gap: 20px;
-}
-
-.profile-items a,
+.profile a,
 .avatar {
    display: flex;
    align-items: center;
@@ -78,6 +77,9 @@ header {
    height: 44px;
    border-radius: 50%;
    border: 1px solid #ecf1f8;
+}
+.avatar {
+   border: none;
 }
 
 a.notifications {
@@ -95,9 +97,7 @@ a.notifications::after {
    border-radius: 50%;
    background-color: #ff4423;
 }
-.avatar {
-   border: none;
-}
+
 /*header///*/
 /*footer*/
 footer {
