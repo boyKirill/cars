@@ -33,7 +33,7 @@ header {
    grid-area: form;
    display: grid;
    grid-template-columns: 1fr auto;
-   border: 1px solid #ccc;
+   border: 1px solid #e7eef6;
    border-radius: 25px;
 }
 
@@ -42,7 +42,7 @@ header {
    grid-template-columns: auto 1fr;
    align-items: center;
 }
-.loop,
+
 .form-filter {
    padding: 10px 20px;
    border-radius: 0 25px 25px 0;
@@ -50,10 +50,13 @@ header {
 }
 
 .loop {
-   border-radius: 25px 0 0 25px;
+   padding: 10px 20px;
+   border-radius: inherit;
+   background-color: transparent;
 }
 
 .search {
+   border-radius: inherit;
    padding: 12px 0;
    width: 100%;
    font-size: 14px;
@@ -98,6 +101,49 @@ a.notifications::after {
    background-color: #ff4423;
 }
 
+@media screen and (max-width: 930px) {
+   header {
+      gap: unset;
+      grid-template:
+         "logo . profile"
+         " . . ." 32px
+         "form form form" / auto 1fr auto;
+   }
+}
+@media screen and (max-width: 700px) {
+   header {
+      padding-bottom: 30px;
+   }
+}
+@media screen and (max-width: 550px) {
+   .profile li a:not(.avatar) {
+      display: none;
+   }
+   .profile {
+      gap: unset;
+   }
+}
+@media screen and (max-width: 450px) {
+   header {
+      padding: 32px 24px;
+   }
+   .form {
+      border: none;
+      gap: 16px;
+   }
+
+   .form label {
+      border: 1px solid #e7eef6;
+      border-radius: 10px;
+   }
+   .form-filter {
+      aspect-ratio: 1 /1;
+      padding: 12px;
+      border: 1px solid #e7eef6;
+      border-radius: 10px;
+   }
+}
+
 /*header///*/
 /*footer*/
 footer {
@@ -124,16 +170,26 @@ footer {
    grid-area: info;
 }
 .nav {
-   display: grid;
    grid-area: nav;
+   display: grid;
+
    gap: 60px;
-   grid-template-columns: repeat(3, 152px);
+   grid-template-areas: "about socials community";
 }
 .nav li {
    display: grid;
    grid-template-columns: auto;
+   white-space: nowrap;
 }
-
+.nav li:nth-child(1) {
+   grid-area: about;
+}
+.nav li:nth-child(2) {
+   grid-area: socials;
+}
+.nav li:nth-child(3) {
+   grid-area: community;
+}
 .text {
    font-size: 16px;
    font-weight: 500;
@@ -141,6 +197,7 @@ footer {
    letter-spacing: -0.02em;
    color: #717171;
    padding-top: 16px;
+   max-width: 30ch;
 }
 .link {
    font-size: 16px;
@@ -184,11 +241,50 @@ footer {
 @media screen and (max-width: 1000px) {
    .top {
       display: grid;
-      grid-template-areas: "info" "nav";
+      grid-template:
+         "info"
+         "." 48px
+         "nav" / 1fr;
    }
    .bottom {
-      display: grid;
-      grid-template-areas: "polc" "copr";
+      grid-template:
+         "polc"
+         "." 32px
+         "copr" / 1fr;
+   }
+}
+@media screen and (max-width: 650px) {
+   .nav {
+      row-gap: 48px;
+      column-gap: 65px;
+      grid-template-areas:
+         "about community"
+         "socials .";
+   }
+}
+@media screen and (max-width: 450px) {
+   footer {
+      padding: 24px;
+      background-color: #f6f7f9;
+   }
+   .top {
+      border: none;
+      padding-bottom: 48px;
+   }
+   .bottom {
+      padding: 0;
+   }
+   .policy {
+      gap: unset;
+      justify-content: space-between;
+   }
+   .link,
+   .text {
+      color: #90a3bf;
+   }
+   .copyright,
+   .policy a {
+      font-size: 12px;
    }
 }
 /*footer///*/
@@ -212,6 +308,10 @@ footer {
    padding-bottom: 4px;
 }
 
+.banners {
+   background-image: linear-gradient();
+}
+
 .banners article {
    --heightBtn: 44px;
    border: 1px solid #ccc;
@@ -228,7 +328,13 @@ footer {
    align-items: start;
    position: relative;
 }
-.banners article:nth-child(1) {
+.banner1 {
+   grid-area: banner1;
+}
+.banner2 {
+   grid-area: banner2;
+}
+/* .banners article:nth-child(1) {
    grid-area: banner1;
    background: repeating-radial-gradient(
       circle,
@@ -242,7 +348,7 @@ footer {
 .banners article:nth-child(2) {
    grid-area: banner2;
 }
-
+ */
 .title-card {
    grid-area: title;
    font-size: 32px;
@@ -302,10 +408,10 @@ footer {
    /* max-width: 582px;*/
 }
 
-.banners .filter:nth-of-type(1) {
+.filter1 {
    grid-area: filter1;
 }
-.banners .filter:nth-of-type(2) {
+.filter2 {
    grid-area: filter2;
 }
 .filter label {
@@ -397,6 +503,154 @@ footer {
 }
 /*filters///////*/
 
+@media screen and (max-width: 1400px) {
+   .banners {
+      grid-template:
+         ". . . . . . ." var(--_size)
+         " banner1 banner1 banner1 . banner2 banner2 banner2" auto
+         ". . . . . . ." var(--_size)
+         "filter1 filter1 filter1 filter1 filter1 filter1 filter1" auto
+         "filter1 filter1 filter1 filter1 filter1 filter1 filter1" calc(
+            var(--_size) / 2
+         )
+         ". . submit submit submit . ." calc(var(--_size) / 2)
+         ". . submit submit submit . ." var(--_size)
+         ". . submit submit submit . ." calc(var(--_size) / 2)
+         "filter2 filter2 filter2 filter2 filter2 filter2 filter2" calc(
+            var(--_size) / 2
+         )
+         "filter2 filter2 filter2 filter2 filter2 filter2 filter2" auto / 1fr var(
+            --_size
+         )
+         calc(var(--_size) / 2)
+         var(--_size) calc(var(--_size) / 2) var(--_size) 1fr;
+   }
+
+   .filter1 {
+      grid-row-start: 4;
+      grid-row-end: 7;
+   }
+   .filter2 {
+      grid-row-start: 8;
+      grid-row-end: 11;
+   }
+   .btn-revers {
+      grid-row-start: 5;
+      grid-row-end: 10;
+      position: relative;
+      padding: 18px;
+   }
+}
+
+@media screen and (max-width: 1000px) {
+   .content {
+      padding-top: 10px;
+   }
+   .banners {
+      grid-template:
+         ". . . . . . ." var(--_size)
+         " banner1 banner1 banner1 banner1 banner1 banner1 banner1" auto
+         ". . . . . . ." var(--_size)
+         "filter1 filter1 filter1 filter1 filter1 filter1 filter1" auto
+         "filter1 filter1 filter1 filter1 filter1 filter1 filter1" calc(
+            var(--_size) / 2
+         )
+         ". . submit submit submit . ." calc(var(--_size) / 2)
+         ". . submit submit submit . ." var(--_size)
+         ". . submit submit submit . ." calc(var(--_size) / 2)
+         "filter2 filter2 filter2 filter2 filter2 filter2 filter2" calc(
+            var(--_size) / 2
+         )
+         "filter2 filter2 filter2 filter2 filter2 filter2 filter2" auto / 1fr var(
+            --_size
+         )
+         calc(var(--_size) / 2)
+         var(--_size) calc(var(--_size) / 2) var(--_size) 1fr;
+   }
+   .banner2 {
+      display: none;
+   }
+}
+@media screen and (max-width: 700px) {
+   .content {
+      background-color: #f6f7f9;
+      padding: 0 24px 64px 24px;
+   }
+
+   .filter {
+      padding: 16px;
+   }
+}
+@media screen and (max-width: 450px) {
+   .content {
+      background-color: #f6f7f9;
+      padding: 0;
+   }
+   .banner1 article {
+      grid-area: art;
+   }
+   .banners {
+      grid-template:
+         "banner1  banner1  banner1 banner1 banner1 banner1 banner1 banner1 banner1" auto ". . . . . . . . ." var(
+            --_size
+         )
+         ". filter1 filter1 filter1 filter1 filter1 filter1 filter1 ." auto ". filter1 filter1 filter1 filter1 filter1 filter1 filter1 ." calc(
+            var(--_size) / 2
+         )
+         ". . . submit submit submit . . ." calc(var(--_size) / 2)
+         ". . . submit submit submit . . ." var(--_size)
+         ". . . submit submit submit . . ." calc(var(--_size) / 2)
+         ". filter2 filter2 filter2 filter2 filter2 filter2 filter2 ." calc(
+            var(--_size) / 2
+         )
+         ". filter2 filter2  filter2 filter2 filter2 filter2 filter2 ." auto / 24px 1fr var(
+            --_size
+         )
+         calc(var(--_size) / 2) var(--_size) calc(var(--_size) / 2) var(--_size)
+         1fr 24px;
+   }
+
+   .filter1 {
+      grid-row-start: 3;
+      grid-row-end: 6;
+   }
+   .filter2 {
+      grid-row-start: 7;
+      grid-row-end: 10;
+   }
+   .btn-revers {
+      grid-row-start: 4;
+      grid-row-end: 9;
+      position: relative;
+      padding: 18px;
+   }
+
+   .banner1 {
+      background-image: linear-gradient(
+         to bottom,
+         #fff,
+         #fff 50%,
+         transparent 15%,
+         transparent
+      );
+      display: grid;
+      grid-template: ". art ." / 24px 1fr 24px;
+   }
+
+   .filter {
+      padding: 16px;
+   }
+}
+@media screen and (max-width: 500px) {
+   .banners article {
+      grid-template:
+         "title title title title title title"
+         "desc desc desc desc desc desc"
+         "link link link . . ."
+         ". . . . . ." 26px
+         ". img img img img ." / auto auto auto 1fr 1fr 1fr;
+   }
+}
 /*category*/
 
 .category-name,
@@ -437,12 +691,10 @@ footer {
    grid-area: products;
    display: grid;
    gap: 32px;
-   grid-template-columns: repeat(4, 1fr);
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 .product {
    background-color: #717171;
-   display: flex;
-   flex-direction: column;
    background-color: #ffffff;
    border-radius: 10px;
    padding: 24px;
@@ -489,6 +741,8 @@ footer {
 }
 .product__image > div {
    position: relative;
+   display: flex;
+   justify-content: center;
 }
 .product__image > div::before {
    position: absolute;
@@ -598,6 +852,94 @@ footer {
    letter-spacing: -0.02em;
    text-align: right;
    color: #90a3bf;
+}
+
+@media screen and (max-width: 760px) {
+   .recom-product {
+      display: grid;
+      grid-template: "form1 form1 form1" "img1 . info1" "bottom1 bottom1 bottom1" /1fr 50px auto;
+   }
+   .recom-top {
+      grid-area: form1;
+   }
+   .recom-image {
+      grid-area: img1;
+   }
+   .recom-info {
+      flex-direction: column;
+      justify-content: center;
+      grid-area: info1;
+   }
+   .recom-bottom {
+      grid-area: bottom1;
+   }
+}
+@media screen and (max-width: 450px) {
+   .category-name {
+      padding: 0 0 7px 0;
+   }
+   .popular-category {
+      padding: 24px 0 7px 24px;
+   }
+   .product2 {
+      padding: 32px 24px 24px 24px;
+   }
+   .product__bottom a {
+      padding: 10px 16px;
+      font-size: 0;
+      line-height: 0;
+   }
+   .product__bottom a::after {
+      content: "Rental Now";
+      font-weight: 600;
+      line-height: 15px;
+      font-size: 12px;
+      vertical-align: middle;
+   }
+   .showMore {
+      padding-top: 28px;
+   }
+   .showMore-btn {
+      padding: 10px 16px;
+      font-size: 0;
+      font-weight: 500;
+      line-height: 15px;
+   }
+   .showMore-btn::after {
+      content: "Show More Car";
+      font-weight: 600;
+      line-height: 15px;
+      font-size: 12px;
+      vertical-align: middle;
+   }
+
+   .car-count {
+      font-weight: 700;
+      line-height: 17px;
+   }
+   .product1 {
+      /* padding: 0 24px; */
+   }
+
+   .horizontal-media-scroller {
+      display: grid;
+      grid-auto-flow: column;
+      gap: unset;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+   }
+
+   .horizontal-media-scroller li {
+      padding-left: 24px;
+   }
+   .horizontal-media-scroller li:last-child {
+      padding-right: 24px;
+   }
+
+   .horizontal-media-scroller li {
+      scroll-snap-align: start;
+   }
 }
 
 /*showMore////*/

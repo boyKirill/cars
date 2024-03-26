@@ -53,41 +53,47 @@ export default component$(() => {
          </header>
          <div class="content">
             <form class="banners">
-               <article>
-                  <h2 class="title-card">The Best Platform for Car Rental</h2>
-                  <div class="desc">
-                     Ease of doing a car rental safely and reliably. Of course
-                     at a low price.
-                  </div>
-                  <a class="rental-link" href="/" aria-label="{Car name}">
-                     Rental Car
-                  </a>
-                  <div class="image">
-                     <img
-                        src="/car-a1.png"
-                        alt="Some text describing the picture"
-                     />
-                  </div>
-               </article>
-               <article>
-                  <h2 class="title-card">
-                     Easy way to rent a car at a low price
-                  </h2>
-                  <div class="desc">
-                     Providing cheap car rental services and safe and
-                     comfortable facilities.
-                  </div>
-                  <a class="rental-link" href="/" aria-label="{Car name}">
-                     Rental Car
-                  </a>
-                  <div class="image">
-                     <img
-                        src="/car-a2.png"
-                        alt="Some text describing the picture"
-                     />
-                  </div>
-               </article>
-               <div class="filter">
+               <div class="banner1">
+                  <article>
+                     <h2 class="title-card">
+                        The Best Platform for Car Rental
+                     </h2>
+                     <div class="desc">
+                        Ease of doing a car rental safely and reliably. Of
+                        course at a low price.
+                     </div>
+                     <a class="rental-link" href="/" aria-label="{Car name}">
+                        Rental Car
+                     </a>
+                     <div class="image">
+                        <img
+                           src="/car-a1.png"
+                           alt="Some text describing the picture"
+                        />
+                     </div>
+                  </article>
+               </div>
+               <div class="banner2">
+                  <article>
+                     <h2 class="title-card">
+                        Easy way to rent a car at a low price
+                     </h2>
+                     <div class="desc">
+                        Providing cheap car rental services and safe and
+                        comfortable facilities.
+                     </div>
+                     <a class="rental-link" href="/" aria-label="{Car name}">
+                        Rental Car
+                     </a>
+                     <div class="image">
+                        <img
+                           src="/car-a2.png"
+                           alt="Some text describing the picture"
+                        />
+                     </div>
+                  </article>
+               </div>
+               <div class="filter filter1">
                   <label>
                      <input type="radio" />
                      <span>Pick - Up</span>
@@ -96,21 +102,21 @@ export default component$(() => {
                      <li>
                         <div class="filter-title">Locations</div>
                         <button class="filter-subtitle">
-                           <span>Select your city</span>
+                           <span>Semarang</span>
                            <img src="/arrow-down.svg" alt="" />
                         </button>
                      </li>
                      <li>
                         <div class="filter-title">Date</div>
                         <button class="filter-subtitle">
-                           <span>Select your date</span>
+                           <span>20 July 2022</span>
                            <img src="/arrow-down.svg" alt="" />
                         </button>
                      </li>
                      <li>
                         <div class="filter-title">Time</div>
                         <button class="filter-subtitle">
-                           <span>Select your time</span>
+                           <span>07.00</span>
                            <img src="/arrow-down.svg" alt="" />
                         </button>
                      </li>
@@ -119,7 +125,7 @@ export default component$(() => {
                <button class="btn-revers" aria-label="Change filters">
                   <img src="/Swap.svg" alt="" />
                </button>
-               <div class="filter">
+               <div class="filter filter2">
                   <label>
                      <input type="radio" />
                      <span>Drop - Off</span>
@@ -149,14 +155,14 @@ export default component$(() => {
                   </ul>
                </div>
             </form>
-            <section class="products">
-               <div class="products__category">
+            <section class="products product1">
+               <div class="products__category popular-category">
                   <h2 class="category-name">Popular Car</h2>
                   <a href="/" class="showAll">
                      View All
                   </a>
                </div>
-               <ul class="products__container">
+               <ul class="products__container horizontal-media-scroller">
                   <li>
                      <article class="product">
                         <form class="product__top">
@@ -420,24 +426,24 @@ export default component$(() => {
                </ul>
             </section>
 
-            <section class="products">
+            <section class="products product2">
                <div class="products__category">
                   <h2 class="category-name">Recomendation Car</h2>
                   <a href="/" class="showAll invisible">
                      View All
                   </a>
                </div>
-               <ul class="products__container">
+               <ul class="products__container recom">
                   <li>
-                     <article class="product">
-                        <form class="product__top">
+                     <article class="product recom-product">
+                        <form class="product__top recom-top">
                            <h3 class="product__name">Koenigsegg</h3>
                            <button
                               aria-label="Add to favorites"
                               class="product__favourites"></button>
                            <span class="product__category">Sport</span>
                         </form>
-                        <div class="product__image">
+                        <div class="product__image recom-image">
                            <div>
                               <img
                                  src="/car-a1.png"
@@ -445,7 +451,7 @@ export default component$(() => {
                               />
                            </div>
                         </div>
-                        <dl class="product__info">
+                        <dl class="product__info recom-info">
                            <div>
                               <dt class="info-icon">
                                  <img
@@ -476,7 +482,7 @@ export default component$(() => {
                               <dd class="info-title">2 People</dd>
                            </div>
                         </dl>
-                        <div class="product__bottom">
+                        <div class="product__bottom recom-bottom">
                            <div class="product__price">
                               <span>
                                  <b>$99.00/ </b>
@@ -494,80 +500,15 @@ export default component$(() => {
                      </article>
                   </li>
                   <li>
-                     <article class="product">
-                        <form class="product__top">
-                           <h3 class="product__name">Koenigsegg</h3>
-                           <button
-                              aria-label="Add to favorites"
-                              class="product__favourites like"></button>
-                           <span class="product__category">Sport</span>
-                        </form>
-                        <div class="product__image">
-                           <div>
-                              <img
-                                 src="/car-a1.png"
-                                 alt="Some text describing the picture"
-                              />
-                           </div>
-                        </div>
-                        <dl class="product__info">
-                           <div>
-                              <dt class="info-icon">
-                                 <img
-                                    src="/gas-station.svg"
-                                    aria-label="Volume"
-                                 />
-                              </dt>
-                              <dd class="info-title">
-                                 90<abbr title="liter">L</abbr>
-                              </dd>
-                           </div>
-                           <div>
-                              <dt class="info-icon">
-                                 <img
-                                    src="/Car-wheel.svg"
-                                    aria-label="The type of control is "
-                                 />
-                              </dt>
-                              <dd class="info-title">Manual</dd>
-                           </div>
-                           <div>
-                              <dt class="info-icon">
-                                 <img
-                                    src="/profile-2user.svg"
-                                    aria-label="Capacity for"
-                                 />
-                              </dt>
-                              <dd class="info-title">2 People</dd>
-                           </div>
-                        </dl>
-                        <div class="product__bottom">
-                           <div class="product__price">
-                              <span>
-                                 <b>$99.00/ </b>
-                                 <small>day</small>
-                              </span>
-                              <s class="old-price ">$100.00</s>
-                           </div>
-                           <a
-                              href="/"
-                              aria-label="Rent a car {Car name}"
-                              class="product__rental">
-                              Rent Now
-                           </a>
-                        </div>
-                     </article>
-                  </li>
-                  <li>
-                     <article class="product">
-                        <form class="product__top">
+                     <article class="product recom-product">
+                        <form class="product__top recom-top">
                            <h3 class="product__name">Koenigsegg</h3>
                            <button
                               aria-label="Add to favorites"
                               class="product__favourites"></button>
                            <span class="product__category">Sport</span>
                         </form>
-                        <div class="product__image">
+                        <div class="product__image recom-image">
                            <div>
                               <img
                                  src="/car-a1.png"
@@ -575,7 +516,7 @@ export default component$(() => {
                               />
                            </div>
                         </div>
-                        <dl class="product__info">
+                        <dl class="product__info recom-info">
                            <div>
                               <dt class="info-icon">
                                  <img
@@ -606,7 +547,7 @@ export default component$(() => {
                               <dd class="info-title">2 People</dd>
                            </div>
                         </dl>
-                        <div class="product__bottom">
+                        <div class="product__bottom recom-bottom">
                            <div class="product__price">
                               <span>
                                  <b>$99.00/ </b>
@@ -622,17 +563,17 @@ export default component$(() => {
                            </a>
                         </div>
                      </article>
-                  </li>
+                  </li>{" "}
                   <li>
-                     <article class="product">
-                        <form class="product__top">
+                     <article class="product recom-product">
+                        <form class="product__top recom-top">
                            <h3 class="product__name">Koenigsegg</h3>
                            <button
                               aria-label="Add to favorites"
                               class="product__favourites"></button>
                            <span class="product__category">Sport</span>
                         </form>
-                        <div class="product__image">
+                        <div class="product__image recom-image">
                            <div>
                               <img
                                  src="/car-a1.png"
@@ -640,7 +581,7 @@ export default component$(() => {
                               />
                            </div>
                         </div>
-                        <dl class="product__info">
+                        <dl class="product__info recom-info">
                            <div>
                               <dt class="info-icon">
                                  <img
@@ -671,7 +612,7 @@ export default component$(() => {
                               <dd class="info-title">2 People</dd>
                            </div>
                         </dl>
-                        <div class="product__bottom">
+                        <div class="product__bottom recom-bottom">
                            <div class="product__price">
                               <span>
                                  <b>$99.00/ </b>
@@ -687,17 +628,17 @@ export default component$(() => {
                            </a>
                         </div>
                      </article>
-                  </li>
+                  </li>{" "}
                   <li>
-                     <article class="product">
-                        <form class="product__top">
+                     <article class="product recom-product">
+                        <form class="product__top recom-top">
                            <h3 class="product__name">Koenigsegg</h3>
                            <button
                               aria-label="Add to favorites"
                               class="product__favourites"></button>
                            <span class="product__category">Sport</span>
                         </form>
-                        <div class="product__image">
+                        <div class="product__image recom-image">
                            <div>
                               <img
                                  src="/car-a1.png"
@@ -705,7 +646,7 @@ export default component$(() => {
                               />
                            </div>
                         </div>
-                        <dl class="product__info">
+                        <dl class="product__info recom-info">
                            <div>
                               <dt class="info-icon">
                                  <img
@@ -736,7 +677,7 @@ export default component$(() => {
                               <dd class="info-title">2 People</dd>
                            </div>
                         </dl>
-                        <div class="product__bottom">
+                        <div class="product__bottom recom-bottom">
                            <div class="product__price">
                               <span>
                                  <b>$99.00/ </b>
@@ -752,82 +693,17 @@ export default component$(() => {
                            </a>
                         </div>
                      </article>
-                  </li>
+                  </li>{" "}
                   <li>
-                     <article class="product">
-                        <form class="product__top">
-                           <h3 class="product__name">Koenigsegg</h3>
-                           <button
-                              aria-label="Add to favorites"
-                              class="product__favourites like"></button>
-                           <span class="product__category">Sport</span>
-                        </form>
-                        <div class="product__image">
-                           <div>
-                              <img
-                                 src="/car-a1.png"
-                                 alt="Some text describing the picture"
-                              />
-                           </div>
-                        </div>
-                        <dl class="product__info">
-                           <div>
-                              <dt class="info-icon">
-                                 <img
-                                    src="/gas-station.svg"
-                                    aria-label="Volume"
-                                 />
-                              </dt>
-                              <dd class="info-title">
-                                 90<abbr title="liter">L</abbr>
-                              </dd>
-                           </div>
-                           <div>
-                              <dt class="info-icon">
-                                 <img
-                                    src="/Car-wheel.svg"
-                                    aria-label="The type of control is "
-                                 />
-                              </dt>
-                              <dd class="info-title">Manual</dd>
-                           </div>
-                           <div>
-                              <dt class="info-icon">
-                                 <img
-                                    src="/profile-2user.svg"
-                                    aria-label="Capacity for"
-                                 />
-                              </dt>
-                              <dd class="info-title">2 People</dd>
-                           </div>
-                        </dl>
-                        <div class="product__bottom">
-                           <div class="product__price">
-                              <span>
-                                 <b>$99.00/ </b>
-                                 <small>day</small>
-                              </span>
-                              <s class="old-price ">$100.00</s>
-                           </div>
-                           <a
-                              href="/"
-                              aria-label="Rent a car {Car name}"
-                              class="product__rental">
-                              Rent Now
-                           </a>
-                        </div>
-                     </article>
-                  </li>
-                  <li>
-                     <article class="product">
-                        <form class="product__top">
+                     <article class="product recom-product">
+                        <form class="product__top recom-top">
                            <h3 class="product__name">Koenigsegg</h3>
                            <button
                               aria-label="Add to favorites"
                               class="product__favourites"></button>
                            <span class="product__category">Sport</span>
                         </form>
-                        <div class="product__image">
+                        <div class="product__image recom-image">
                            <div>
                               <img
                                  src="/car-a1.png"
@@ -835,7 +711,7 @@ export default component$(() => {
                               />
                            </div>
                         </div>
-                        <dl class="product__info">
+                        <dl class="product__info recom-info">
                            <div>
                               <dt class="info-icon">
                                  <img
@@ -866,7 +742,7 @@ export default component$(() => {
                               <dd class="info-title">2 People</dd>
                            </div>
                         </dl>
-                        <div class="product__bottom">
+                        <div class="product__bottom recom-bottom">
                            <div class="product__price">
                               <span>
                                  <b>$99.00/ </b>
@@ -882,17 +758,17 @@ export default component$(() => {
                            </a>
                         </div>
                      </article>
-                  </li>
+                  </li>{" "}
                   <li>
-                     <article class="product">
-                        <form class="product__top">
+                     <article class="product recom-product">
+                        <form class="product__top recom-top">
                            <h3 class="product__name">Koenigsegg</h3>
                            <button
                               aria-label="Add to favorites"
                               class="product__favourites"></button>
                            <span class="product__category">Sport</span>
                         </form>
-                        <div class="product__image">
+                        <div class="product__image recom-image">
                            <div>
                               <img
                                  src="/car-a1.png"
@@ -900,7 +776,7 @@ export default component$(() => {
                               />
                            </div>
                         </div>
-                        <dl class="product__info">
+                        <dl class="product__info recom-info">
                            <div>
                               <dt class="info-icon">
                                  <img
@@ -931,7 +807,137 @@ export default component$(() => {
                               <dd class="info-title">2 People</dd>
                            </div>
                         </dl>
-                        <div class="product__bottom">
+                        <div class="product__bottom recom-bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
+                        </div>
+                     </article>
+                  </li>{" "}
+                  <li>
+                     <article class="product recom-product">
+                        <form class="product__top recom-top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image recom-image">
+                           <div>
+                              <img
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
+                              />
+                           </div>
+                        </div>
+                        <dl class="product__info recom-info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom recom-bottom">
+                           <div class="product__price">
+                              <span>
+                                 <b>$99.00/ </b>
+                                 <small>day</small>
+                              </span>
+                              <s class="old-price ">$100.00</s>
+                           </div>
+                           <a
+                              href="/"
+                              aria-label="Rent a car {Car name}"
+                              class="product__rental">
+                              Rent Now
+                           </a>
+                        </div>
+                     </article>
+                  </li>{" "}
+                  <li>
+                     <article class="product recom-product">
+                        <form class="product__top recom-top">
+                           <h3 class="product__name">Koenigsegg</h3>
+                           <button
+                              aria-label="Add to favorites"
+                              class="product__favourites"></button>
+                           <span class="product__category">Sport</span>
+                        </form>
+                        <div class="product__image recom-image">
+                           <div>
+                              <img
+                                 src="/car-a1.png"
+                                 alt="Some text describing the picture"
+                              />
+                           </div>
+                        </div>
+                        <dl class="product__info recom-info">
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/gas-station.svg"
+                                    aria-label="Volume"
+                                 />
+                              </dt>
+                              <dd class="info-title">
+                                 90<abbr title="liter">L</abbr>
+                              </dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/Car-wheel.svg"
+                                    aria-label="The type of control is "
+                                 />
+                              </dt>
+                              <dd class="info-title">Manual</dd>
+                           </div>
+                           <div>
+                              <dt class="info-icon">
+                                 <img
+                                    src="/profile-2user.svg"
+                                    aria-label="Capacity for"
+                                 />
+                              </dt>
+                              <dd class="info-title">2 People</dd>
+                           </div>
+                        </dl>
+                        <div class="product__bottom recom-bottom">
                            <div class="product__price">
                               <span>
                                  <b>$99.00/ </b>
