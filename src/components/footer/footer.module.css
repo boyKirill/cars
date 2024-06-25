@@ -1,4 +1,149 @@
+/*footer*/
 footer {
-   font-size: 40px;
-   background-color: blue;
+   padding: 80px 60px 60px 60px;
+   background-color: #ffffff;
 }
+
+.top {
+   display: grid;
+   grid-template-areas: "info nav";
+   grid-template-columns: 292px auto;
+   justify-content: space-between;
+   border-bottom: 1px solid#d9d9d9;
+   padding-bottom: 36px;
+}
+.bottom {
+   display: grid;
+   grid-template-areas: "copr polc";
+   grid-template-columns: auto auto;
+   justify-content: space-between;
+   padding-top: 36px;
+}
+.information {
+   grid-area: info;
+}
+.nav {
+   grid-area: nav;
+   display: grid;
+   gap: 60px;
+   grid-template: "about socials community" auto / 1fr 1fr 1fr;
+}
+.nav > li {
+   display: grid;
+   grid-template-columns: auto;
+   white-space: nowrap;
+}
+.nav li:nth-child(1) {
+   grid-area: about;
+}
+.nav li:nth-child(2) {
+   grid-area: socials;
+}
+.nav li:nth-child(3) {
+   grid-area: community;
+}
+.nav_sublist {
+   display: flex;
+   flex-direction: column;
+   gap: 12px;
+}
+.text {
+   font-size: var(--fs400);
+   font-weight: 500;
+   line-height: 1.5;
+   letter-spacing: -0.02em;
+   color: #717171;
+   padding-top: 16px;
+   max-width: 30ch;
+}
+.link {
+   font-size: var(--fs400);
+   font-weight: 500;
+   line-height: 1.5;
+   letter-spacing: -0.02em;
+   color: #717171;
+   padding: 7px 0;
+}
+
+.title {
+   font-size: var(--fs500);
+   font-weight: 600;
+   line-height: 1.5;
+   letter-spacing: -0.02em;
+   padding-bottom: 20px;
+}
+.copyright {
+   grid-area: copr;
+   font-size: var(--fs400);
+   font-weight: 600;
+   line-height: 1.5;
+   letter-spacing: -0.02em;
+   color: #1a202c;
+}
+.policy {
+   grid-area: polc;
+   display: flex;
+   gap: 60px;
+}
+
+.policy a {
+   color: #1a202c;
+   font-size: var(--fs400);
+   font-weight: 600;
+   line-height: 1.5;
+   letter-spacing: -0.02em;
+   color: #1a202c;
+}
+
+@media screen and (max-width: 1000px) {
+   .top {
+      display: grid;
+      grid-template:
+         "info"
+         "." 48px
+         "nav" / 1fr;
+   }
+   .bottom {
+      grid-template:
+         "polc"
+         "." 32px
+         "copr" / 1fr;
+   }
+}
+@media screen and (max-width: 650px) {
+   .nav {
+      row-gap: 48px;
+      column-gap: 65px;
+      grid-template:
+         "about community"
+         "socials ." auto / 1fr 1fr;
+   }
+}
+@media screen and (max-width: 450px) {
+   footer {
+      padding: 24px;
+      background-color: #f6f7f9;
+   }
+   .top {
+      border: none;
+      padding-bottom: 48px;
+   }
+   .bottom {
+      padding: 0;
+   }
+   .policy {
+      gap: unset;
+      justify-content: space-between;
+   }
+   .title {
+      padding-bottom: 15px;
+   }
+   .text {
+      line-height: 2;
+   }
+   .link,
+   .text {
+      color: #90a3bf;
+   }
+}
+/*footer///*/

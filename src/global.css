@@ -5,6 +5,20 @@
  * the styles in here will be applied to the Document, without any sort of CSS scoping.
  *
  */
+
+/* src/styles/global.css */
+:root {
+   --fs100: clamp(0.46rem, 0.05vi + 0.45rem, 0.51rem);
+   --fs200: clamp(0.58rem, 0.11vi + 0.55rem, 0.69rem);
+   --fs300: clamp(0.72rem, 0.19vi + 0.68rem, 0.91rem);
+   --fs400: clamp(0.9rem, 0.32vi + 0.84rem, 1.22rem);
+   --fs500: clamp(1.13rem, 0.5vi + 1.02rem, 1.63rem);
+   --fs600: clamp(1.41rem, 0.76vi + 1.25rem, 2.17rem);
+   --fs700: clamp(1.76rem, 1.13vi + 1.53rem, 2.89rem);
+   --fs800: clamp(2.2rem, 1.65vi + 1.87rem, 3.85rem);
+   --fs900: clamp(2.75rem, 2.38vi + 2.27rem, 5.13rem);
+   --fs1000: clamp(3.43rem, 3.41vi + 2.75rem, 6.84rem);
+}
 * {
    padding: 0;
    margin: 0;

@@ -1,0 +1,166 @@
+.unvisible {
+   position: fixed;
+   left: 100%;
+}
+
+.container {
+   display: grid;
+   grid-template:
+      "header header"
+      "filter content"
+      "footer footer" / minmax(200px, 360px) minmax(500px, 1fr);
+}
+.header {
+   grid-area: header;
+}
+.filter_panel {
+   grid-area: filter;
+}
+.content {
+   grid-area: content;
+}
+.footer {
+   grid-area: footer;
+}
+
+/*for component Filter*/
+.filter_box {
+   --_size: 30px;
+   display: grid;
+   grid-template:
+      "filter1 filter1  filter1"
+      ". submit ." calc(var(--_size) / 2)
+      ". submit ." var(--_size)
+      ". submit ." calc(var(--_size) / 2)
+      "filter2 filter2  filter2"
+      / 1fr calc(var(--_size) * 2) 1fr;
+}
+.filter1 {
+   grid-area: filter1;
+   grid-row-start: 1;
+   grid-row-end: 3;
+}
+.filter2 {
+   grid-area: filter2;
+   grid-row-start: 4;
+   grid-row-end: -1;
+}
+.btn_revers {
+   grid-area: submit;
+   grid-row-start: 2;
+   grid-row-end: 5;
+}
+/*for component Filter///*/
+
+.content {
+   display: flex;
+   flex-direction: column;
+   background-color: #f6f7f9;
+   padding: 32px;
+}
+
+/*products*/
+.products {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-areas: "category" "products" "showMore";
+   grid-template-rows: auto 1fr;
+   gap: 20px;
+   padding-top: 32px;
+}
+
+.products__category {
+   grid-area: category;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+.products__container {
+   grid-area: products;
+   display: grid;
+   gap: 32px;
+   grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+   grid-template-rows: 1fr;
+   align-self: start;
+}
+.products__container li {
+   align-self: start;
+}
+/*products*/
+
+/*showMore*/
+.showMore {
+   grid-area: showMore;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding-top: 44px;
+   position: relative;
+}
+
+.showMore_btn {
+   padding: 10px 20px;
+   background-color: #3563e9;
+   color: #ffffff;
+   font-size: var(--fs300);
+   font-weight: 500;
+   line-height: 1.5;
+   letter-spacing: -0.02em;
+   border-radius: 5px;
+}
+
+.car_count {
+   position: absolute;
+   content: "";
+   right: 0;
+   bottom: 0;
+   transform: translateY(-50%);
+   font-size: 14px;
+   font-weight: 500;
+   line-height: 21px;
+   letter-spacing: -0.02em;
+   text-align: right;
+   color: #90a3bf;
+}
+
+@media screen and (max-width: 700px) {
+   .container {
+      grid-template:
+         "header"
+         "filter"
+         "content"
+         "footer";
+   }
+
+   .content {
+      padding: 32px 24px;
+   }
+}
+
+@media screen and (max-width: 450px) {
+   .category_name {
+      padding: 0 0 7px 0;
+   }
+   .popular_category {
+      padding: 24px 0 7px 24px;
+   }
+   .product2 {
+      padding: 32px 22px 24px 22px;
+   }
+   .showMore {
+      padding-top: 28px;
+   }
+   .showMore_btn {
+      padding: 10px 16px;
+      font-weight: 600;
+   }
+
+   .product__rental {
+      font-weight: 600;
+   }
+
+   .car_count {
+      font-weight: 700;
+      line-height: 17px;
+   }
+}
