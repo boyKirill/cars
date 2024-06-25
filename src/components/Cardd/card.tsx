@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import styles from "./Card.module.css";
+import styles from "./card.module.css";
 
 interface ItemProps {
    name: string;
@@ -11,7 +11,7 @@ interface ItemProps {
    oldPrice?: number;
 }
 
-export const Card = component$<ItemProps>((props) => {
+export default component$<ItemProps>((props) => {
    return (
       <article class={styles.product}>
          <form class={styles.product__top}>

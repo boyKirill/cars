@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import styles from "./Filter.module.css";
+import styles from "./filter.module.css";
 
 interface props {
    classFilter1?: string;

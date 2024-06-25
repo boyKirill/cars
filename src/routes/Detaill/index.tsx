@@ -1,8 +1,8 @@
-import { component$, $, useSignal } from "@builder.io/qwik";
-import Filter_panel from "../../components/Filter_panel/Filter_panel";
-import Footer from "../../components/Footer/Footer";
-import Header from "../../components/Header/Header";
-import styles from "./Detail.module.css";
+import { component$, useSignal, $ } from "@builder.io/qwik";
+import Filterpanel from "../../components/Filterpanel/filterpanel";
+import Headerr from "../../components/Headerr/header";
+import Footerr from "../../components/Footerr/footer";
+import styles from "./detail.module.css";
 
 export default component$(() => {
    const count = useSignal(0);
@@ -12,8 +12,8 @@ export default component$(() => {
       <>
          <button onClick$={() => alert("Button clicked!")}>Click me</button>
          <div class={styles.container}>
-            <Header class={styles.header} />
-            <Filter_panel class={styles.filter_panel} />
+            <Headerr class={styles.header} />
+            <Filterpanel class={styles.filter_panel} />
             <div class={styles.content}>
                <div class={styles.detail_container}>
                   <div class={styles.gallery}>
@@ -43,7 +43,7 @@ export default component$(() => {
                   <div class={styles.detail_info}></div>
                </div>
             </div>
-            <Footer class={styles.footer} />
+            <Footerr class={styles.footer} />
          </div>
       </>
    );

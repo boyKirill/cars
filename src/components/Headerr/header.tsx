@@ -1,7 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import ImgLogo from "../../media/Logo.svg?jsx";
-import ImgAvatar from "../../media/avatar.svg?jsx";
-import styles from "./Header.module.css";
+import styles from "./header.module.css";
 
 interface ItemProps {
    class?: string;
@@ -13,7 +11,7 @@ export default component$<ItemProps>((props) => {
          <h1 class={styles.logo}>
             <span class={styles.invisible}>The morent logo</span>
             <a href="/">
-               <ImgLogo />
+               <img src="/logo.svg" alt="" />
             </a>
          </h1>
 
@@ -52,7 +50,7 @@ export default component$<ItemProps>((props) => {
             </li>
             <li>
                <a href="/" aria-label="profile" class={styles.avatar}>
-                  <ImgAvatar />
+                  <img src="/avatar.svg" alt="" />
                </a>
             </li>
          </ul>

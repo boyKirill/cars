@@ -1,14 +1,13 @@
-import { component$, useSignal,} from "@builder.io/qwik";
-import styles from "./Filter_panel.module.css";
+import { component$, useSignal } from "@builder.io/qwik";
+import styles from "./filterpanel.module.css";
 
 interface ItemProps {
    class?: string;
 }
 
 export default component$<ItemProps>((props) => {
-
-	const outputInput = useSignal(50)
-	/* const sum  = useSignal(0); */
+   const outputInput = useSignal(50);
+   /* const sum  = useSignal(0); */
 
    return (
       <>
@@ -91,7 +90,9 @@ export default component$<ItemProps>((props) => {
                      type="range"
                      min="0"
                      max="100"
-                     onInput$={(event) => outputInput.value = event.target.value}
+                     onInput$={(event) =>
+                        (outputInput.value = event.target.value)
+                     }
                   />
 
                   <span>Max. ${outputInput}</span>

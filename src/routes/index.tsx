@@ -1,10 +1,9 @@
 import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
-import type { DocumentHead } from "@builder.io/qwik-city";
-import { Card } from "../components/Card/Card";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
-import Filter from "../components/Filter/Filter";
+import { DocumentHead } from "@builder.io/qwik-city";
+import Headerr from "../components/Headerr/header";
+import Footerr from "../components/Footerr/footer";
+import Filterr from "../components/Filterr/filter";
+import Cardd from "../components/Cardd/card";
 
 const dataPopularCar = [
    {
@@ -122,7 +121,7 @@ const dataRecomCar = [
 export default component$(() => {
    return (
       <div class="container">
-         <Header />
+         <Headerr />
          <div class="content">
             <form class="banners">
                <div class="banner1">
@@ -165,7 +164,7 @@ export default component$(() => {
                      </div>
                   </article>
                </div>
-               <Filter
+               <Filterr
                   classFilter1="filter1"
                   classFilter2="filter2"
                   classBtnRevers="btn_revers"
@@ -181,7 +180,7 @@ export default component$(() => {
                <ul class="products__container horizontal-media-scroller">
                   {dataPopularCar.map((car) => (
                      <li>
-                        <Card
+                        <Cardd
                            key={car.name}
                            name={car.name}
                            category={car.category}
@@ -206,7 +205,7 @@ export default component$(() => {
                <ul class="products__container recom">
                   {dataRecomCar.map((car) => (
                      <li>
-                        <Card
+                        <Cardd
                            key={car.name}
                            name={car.name}
                            category={car.category}
@@ -220,14 +219,14 @@ export default component$(() => {
                   ))}
                </ul>
                <div class="showMore">
-                  <Link href="/category" class="showMore-btn">
+                  <a href="/category" class="showMore-btn">
                      Show more car
-                  </Link>
+                  </a>
                   <span class="car-count">120 Car</span>
                </div>
             </section>
          </div>
-         <Footer />
+         <Footerr />
       </div>
    );
 });

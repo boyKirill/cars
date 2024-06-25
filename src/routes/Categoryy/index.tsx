@@ -1,12 +1,11 @@
 import { component$ } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
-
-import styles from "./Category.module.css";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import Filter from "../../components/Filter/Filter";
-import { Card } from "../../components/Card/Card";
-import Filter_panel from "../../components/Filter_panel/Filter_panel";
+import { DocumentHead } from "@builder.io/qwik-city";
+import Cardd from "../../components/Cardd/card";
+import Filterpanel from "../../components/Filterpanel/filterpanel";
+import Filterr from "../../components/Filterr/filter";
+import Footerr from "../../components/Footerr/footer";
+import Headerr from "../../components/Headerr/header";
+import styles from "./category.module.css";
 
 const dataRecomCar = [
    {
@@ -95,11 +94,11 @@ const dataRecomCar = [
 export default component$(() => {
    return (
       <div class={styles.container}>
-         <Header class={styles.header} />
-         <Filter_panel class={styles.filter_panel} />
+         <Headerr class={styles.header} />
+         <Filterpanel class={styles.filter_panel} />
          <div class={styles.content}>
             <form class={styles.filter_box}>
-               <Filter
+               <Filterr
                   classFilter1={styles.filter1}
                   classFilter2={styles.filter2}
                   classBtnRevers={styles.btn_revers}
@@ -112,7 +111,7 @@ export default component$(() => {
                <ul class={styles.products__container}>
                   {dataRecomCar.map((car) => (
                      <li>
-                        <Card
+                        <Cardd
                            key={car.name}
                            name={car.name}
                            category={car.category}
@@ -126,14 +125,14 @@ export default component$(() => {
                   ))}
                </ul>
                <div class={styles.showMore}>
-                  <Link href="/category" class={styles.showMore_btn}>
+                  <a href="/category" class={styles.showMore_btn}>
                      Show more car
-                  </Link>
+                  </a>
                   <span class={styles.car_count}>120 Car</span>
                </div>
             </section>
          </div>
-         <Footer class={styles.footer} />
+         <Footerr class={styles.footer} />
       </div>
    );
 });
