@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import ImgLogo from '~/media/Logo.svg?jsx';
 import styles from "./footer.module.css";
 
 interface ItemProps {
@@ -12,7 +13,7 @@ export default component$<ItemProps>((props) => {
             <div class={styles.information}>
                <h2>
                   <a href="/" class={styles.logo}>
-                     <img src="/Logo" alt="" />
+                     <ImgLogo/>
                   </a>
                </h2>
                <p class={styles.text}>

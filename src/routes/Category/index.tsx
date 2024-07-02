@@ -1,10 +1,10 @@
 import { component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
-import Cardd from "../../components/Cardd/card";
+import Card from "../../components/Card/card";
 import Filterpanel from "../../components/Filterpanel/filterpanel";
-import Filterr from "../../components/Filterr/filter";
-import Footerr from "../../components/Footerr/footer";
-import Headerr from "../../components/Headerr/header";
+import Filter from "../../components/Filter/filter";
+import Footer from "../../components/Footer/footer";
+import Header from "../../components/Header/header";
 import styles from "./category.module.css";
 
 const dataRecomCar = [
@@ -94,11 +94,11 @@ const dataRecomCar = [
 export default component$(() => {
    return (
       <div class={styles.container}>
-         <Headerr class={styles.header} />
+         <Header class={styles.header} />
          <Filterpanel class={styles.filter_panel} />
          <div class={styles.content}>
             <form class={styles.filter_box}>
-               <Filterr
+               <Filter
                   classFilter1={styles.filter1}
                   classFilter2={styles.filter2}
                   classBtnRevers={styles.btn_revers}
@@ -111,7 +111,7 @@ export default component$(() => {
                <ul class={styles.products__container}>
                   {dataRecomCar.map((car) => (
                      <li>
-                        <Cardd
+                        <Card
                            key={car.name}
                            name={car.name}
                            category={car.category}
@@ -132,7 +132,7 @@ export default component$(() => {
                </div>
             </section>
          </div>
-         <Footerr class={styles.footer} />
+         <Footer class={styles.footer} />
       </div>
    );
 });

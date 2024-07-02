@@ -1,9 +1,9 @@
 import { component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
-import Headerr from "../components/Headerr/header";
-import Footerr from "../components/Footerr/footer";
-import Filterr from "../components/Filterr/filter";
-import Cardd from "../components/Cardd/card";
+import Header from "../components/Header/header";
+import Footer from "../components/Footer/footer";
+import Filter from "../components/Filter/filter";
+import Card from "../components/Card/card";
 
 const dataPopularCar = [
    {
@@ -121,7 +121,7 @@ const dataRecomCar = [
 export default component$(() => {
    return (
       <div class="container">
-         <Headerr />
+         <Header />
          <div class="content">
             <form class="banners">
                <div class="banner1">
@@ -164,7 +164,7 @@ export default component$(() => {
                      </div>
                   </article>
                </div>
-               <Filterr
+               <Filter
                   classFilter1="filter1"
                   classFilter2="filter2"
                   classBtnRevers="btn_revers"
@@ -180,7 +180,7 @@ export default component$(() => {
                <ul class="products__container horizontal-media-scroller">
                   {dataPopularCar.map((car) => (
                      <li>
-                        <Cardd
+                        <Card
                            key={car.name}
                            name={car.name}
                            category={car.category}
@@ -205,7 +205,7 @@ export default component$(() => {
                <ul class="products__container recom">
                   {dataRecomCar.map((car) => (
                      <li>
-                        <Cardd
+                        <Card
                            key={car.name}
                            name={car.name}
                            category={car.category}
@@ -226,7 +226,7 @@ export default component$(() => {
                </div>
             </section>
          </div>
-         <Footerr />
+         <Footer />
       </div>
    );
 });

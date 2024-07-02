@@ -1,4 +1,8 @@
 import { component$ } from "@builder.io/qwik";
+import ImgAvatar from '~/media/avatar.svg?jsx';
+import ImgSearch from '~/media/search.svg?jsx';
+import ImgFilter from '~/media/filter.svg?jsx';
+import ImgLogo from '~/media/Logo.svg?jsx';
 import styles from "./header.module.css";
 
 interface ItemProps {
@@ -11,13 +15,13 @@ export default component$<ItemProps>((props) => {
          <h1 class={styles.logo}>
             <span class={styles.invisible}>The morent logo</span>
             <a href="/">
-               <img src="/logo.svg" alt="" />
+               <ImgLogo />
             </a>
          </h1>
 
          <form class={styles.form}>
             <label>
-               <img class={styles.loop} src="/search.svg" alt="" />
+               <ImgSearch class={styles.loop} />
                <input
                   aria-label="Search"
                   class={styles.search}
@@ -26,7 +30,7 @@ export default component$<ItemProps>((props) => {
                />
             </label>
             <button class={styles.form__filter}>
-               <img src="/filter.svg" alt="" />
+               <ImgFilter />
             </button>
          </form>
          <ul class={styles.profile}>
@@ -50,7 +54,7 @@ export default component$<ItemProps>((props) => {
             </li>
             <li>
                <a href="/" aria-label="profile" class={styles.avatar}>
-                  <img src="/avatar.svg" alt="" />
+                  <ImgAvatar />
                </a>
             </li>
          </ul>

@@ -1,0 +1,18 @@
+#image-container {
+    margin-bottom: 20px;
+}
+
+#image-container img {
+    width: 100%;
+    height: auto;
+}
+#thumbnails{
+    display: flex;
+    gap: 10px;
+}
+
+#thumbnails img{
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+}
