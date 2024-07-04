@@ -96,6 +96,7 @@ input[type="range"] {
       display: grid;
       grid-template: "type capacity" "range range" auto / 1fr 1fr;
       gap: 30px;
+      padding: 24px;
    }
    .category_title {
       padding-bottom: 10px;

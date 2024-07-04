@@ -177,24 +177,21 @@ export default component$(() => {
                      View All
                   </a>
                </div>
-               <ul class="products__container horizontal-media-scroller">
+               <div class="products__container horizontal_media_scroller">
                   {dataPopularCar.map((car) => (
-                     <li>
-                        <Card
-                           key={car.name}
-                           name={car.name}
-                           category={car.category}
-                           volume={car.volume}
-                           numCapacity={car.numCapacity}
-                           price={car.price}
-                           oldPrice={car.oldPrice}
-                           imageSrc={car.imageSrc}
-                        />
-                     </li>
+                     <Card
+                        key={car.name}
+                        name={car.name}
+                        category={car.category}
+                        volume={car.volume}
+                        numCapacity={car.numCapacity}
+                        price={car.price}
+                        oldPrice={car.oldPrice}
+                        imageSrc={car.imageSrc}
+                     />
                   ))}
-               </ul>
+               </div>
             </section>
-
             <section class="products product2">
                <div class="products__category">
                   <h2 class="category-name">Recomendation Car</h2>

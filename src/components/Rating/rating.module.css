@@ -1,0 +1,25 @@
+
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.stars {
+    display: flex;
+}
+
+.star {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    margin-right: 2px;
+}
+
+.star.full {
+    background-image: url("/public/star-full.svg"); /* путь к изображению полной звезды */
+}
+
+.star.half {
+    background-image: url("/public/star.svg"); /* путь к изображению полузвезды */
+}

@@ -7,7 +7,7 @@ main {
 }
 .container {
    margin: 0 auto;
-   max-width: 2000px;
+   max-width: 1440px;
    height: 100%;
    display: grid;
    grid-template-columns: 1fr;
@@ -406,17 +406,16 @@ main {
       font-weight: 700;
       line-height: 17px;
    }
-   .product1 {
-      /* padding: 0 24px; */
-   }
 
-   .horizontal-media-scroller {
+   .horizontal_media_scroller {
       display: grid;
       grid-auto-flow: column;
-      gap: unset;
+      gap: 20px;
+      padding: 0 24px;
       overflow-x: auto;
-      overscroll-behavior-x: contain;
-      scroll-snap-type: x mandatory;
+      overscroll-behavior-inline: contain;
+      scroll-snap-type: inline mandatory;
+      scroll-padding-inline: 20px;
       background-image: 
     /* Shadows */
          linear-gradient(to right, #f6f7f9, #f6f7f9),
@@ -446,14 +445,8 @@ main {
       background-attachment: local, local, scroll, scroll;
    }
 
-   .horizontal-media-scroller li {
-      padding-left: 24px;
-   }
-   .horizontal-media-scroller li:last-child {
-      padding-right: 24px;
-   }
 
-   .horizontal-media-scroller li {
+   .horizontal_media_scroller > * {
       scroll-snap-align: start;
    }
 }

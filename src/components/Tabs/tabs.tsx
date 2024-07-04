@@ -1,4 +1,4 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$, useSignal, useStore } from '@builder.io/qwik';
 import styles from "./tabs.module.css"
 
 
@@ -9,23 +9,27 @@ interface ItemProps {
 export default component$((props: ItemProps) => {
     console.log(props.imagesSrc[0]);
     const selectedImage = useSignal<string>(props.imagesSrc[0]);
+    const store = useStore({ currentImage: props.imagesSrc[0] });
 
   return (
     <div>
       <div id={styles["image-container"]}>
-        <img src={selectedImage.value} alt="Selected" style={{ width: '100%', height: 'auto' }} />
+        <img src={selectedImage.value} />
       </div>
-      <div id={styles["thumbnails"]}>
+      <ul id={styles["thumbnails"]}>
         {props.imagesSrc.map((image) => (
           <img
             key={image}
             src={image}
             alt="Thumbnail"
-            style={{ width: '100px', height: 'auto', cursor: 'pointer' }}
-            onClick$={() => selectedImage.value = image}
+            class={store.currentImage === image ? styles.selectedThumbnail : ''}
+            onClick$={() => {
+              selectedImage.value = image;
+              store.currentImage = image;
+            }}
           />
         ))}
-      </div>
+      </ul>
     </div>
   );
 });

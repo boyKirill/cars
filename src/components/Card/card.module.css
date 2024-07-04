@@ -64,11 +64,12 @@
 }
 
 .product__image {
-   padding-block: 64px;
+   padding-block: 30px;
 }
 .product__image img {
-   max-width: 100%;
-   height: auto;
+   inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
 }
 .product__image > div {
    position: relative;
