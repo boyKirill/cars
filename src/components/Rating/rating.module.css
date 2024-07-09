@@ -17,9 +17,17 @@
 }
 
 .star.full {
-    background-image: url("/public/star-full.svg"); /* путь к изображению полной звезды */
+    background-image: url("/public/star-full.svg");
 }
 
 .star.half {
-    background-image: url("/public/star.svg"); /* путь к изображению полузвезды */
+    background-image: url("/public/star.svg");
 }
+
+@media screen and (max-width:450px) {
+    .star {
+        width: 15px;
+        height: 15px;
+    }
+ }
+ 

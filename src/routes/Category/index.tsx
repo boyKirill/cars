@@ -108,22 +108,20 @@ export default component$(() => {
                <h2 class={styles.category_name + " " + styles.unvisible}>
                   Selected cars
                </h2>
-               <ul class={styles.products__container}>
+               <div class={styles.products__container}>
                   {dataRecomCar.map((car) => (
-                     <li>
-                        <Card
-                           key={car.name}
-                           name={car.name}
-                           category={car.category}
-                           volume={car.volume}
-                           numCapacity={car.numCapacity}
-                           price={car.price}
-                           oldPrice={car.oldPrice}
-                           imageSrc={car.imageSrc}
-                        />
-                     </li>
+                     <Card
+                        key={car.name}
+                        name={car.name}
+                        category={car.category}
+                        volume={car.volume}
+                        numCapacity={car.numCapacity}
+                        price={car.price}
+                        oldPrice={car.oldPrice}
+                        imageSrc={car.imageSrc}
+                     />
                   ))}
-               </ul>
+               </div>
                <div class={styles.showMore}>
                   <a href="/category" class={styles.showMore_btn}>
                      Show more car

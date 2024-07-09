@@ -95,7 +95,24 @@ export default component$(() => {
          userMark: 3,
 
       },
-   ]
+   ];
+   const dataSelectedCar =
+    {
+        name: "Nissan GT - R",
+        category: "Sport",
+        volume: 80,
+        numCapacity: 2,
+        price: 80.0,
+        oldPrice: 100.0,
+        imageSrc: "/car-a2.png",
+        imageSrcMini: "/d1.png",
+        tabImages: [
+            "/d1.png",
+            "/d2.png",
+            "/d3.png",
+        ],
+        averageMark: 4,
+    };
 
    return (
       <>
@@ -105,15 +122,15 @@ export default component$(() => {
             <div class={styles.content}>
                <div class={styles.detail_container}>
                   <div class={styles.gallery}>
-                     <Tabs imagesSrc={dataPopularCar[0].tabImages} />
+                     <Tabs imagesSrc={dataSelectedCar.tabImages} />
                   </div>
 
                   <div class={styles.detail}>
                      <form class={styles.detail_top}>
                         <div>
-                           <h2 class={styles.car_name}>Nissan GT - R</h2>
+                           <h2 class={styles.car_name}>{dataSelectedCar.name}</h2>
                            <div class={styles.reviewer_box}>
-                              <Rating />
+                              <Rating mark={dataSelectedCar.averageMark}/>
                               <span class={styles.reviewer}>440+ Reviewer</span>
                            </div>
 
@@ -128,7 +145,7 @@ export default component$(() => {
                      <div class={styles.detail_characteristics}>
                         <div>
                            <dt class={styles.characteristic}>Type Car</dt>
-                           <dd class={styles.characteristic_info}>Sport</dd>
+                           <dd class={styles.characteristic_info}>{dataSelectedCar.category}</dd>
                         </div>
                         <div>
                            <dt class={styles.characteristic}>Steering</dt>
@@ -136,24 +153,24 @@ export default component$(() => {
                         </div>
                         <div>
                            <dt class={styles.characteristic}>Capacity</dt>
-                           <dd class={styles.characteristic_info}>2 Person</dd>
+                           <dd class={styles.characteristic_info}>{dataSelectedCar.numCapacity} Person</dd>
                         </div>
                         <div>
                            <dt class={styles.characteristic}>Gasoline</dt>
-                           <dd class={styles.characteristic_info}>70L</dd>
+                           <dd class={styles.characteristic_info}>{dataSelectedCar.volume}L</dd>
                         </div>
                      </div>
                      <div class={styles.detail_bottom}>
                         <div class={styles.product__price}>
                            <span>
-                              <b>$80.00/ </b>
+                              <b>${dataSelectedCar.price.toFixed(2)}/ </b>
                               <small>day</small>
-                           </span><s class={styles.old_price}>$100.00</s>
+                           </span><s class={styles.old_price}>${dataSelectedCar.oldPrice.toFixed(2)}</s>
 
                         </div>
                         <a
                            href="/"
-                           aria-label="Rent a car {props.name}"
+                           aria-label={"Rent a car" + dataSelectedCar.name}
                            class={styles.product__rental}>
                            Rent Now
                         </a>

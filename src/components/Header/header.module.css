@@ -37,20 +37,19 @@ header {
 }
 
 .form__filter {
-   padding: 10px 20px;
+   padding: 0 20px;
    border-radius: 0 25px 25px 0;
    background-color: transparent;
 }
 
 .loop {
-   padding: 10px 20px;
+   padding: 0 20px;
    border-radius: inherit;
    background-color: transparent;
 }
 
 .search {
    border-radius: inherit;
-   padding: 12px 0;
    width: 100%;
    font-size: var(--fs400);
    font-weight: 500;
@@ -73,6 +72,7 @@ header {
    height: 44px;
    border-radius: 50%;
    border: 1px solid #ecf1f8;
+   box-sizing: border-box;
 }
 .avatar {
    border: none;
@@ -102,6 +102,9 @@ a.notifications::after {
          " . . ." 32px
          "form form form" / auto 1fr auto;
    }
+   .form label {
+      padding: 12px 0;
+   }
 }
 @media screen and (max-width: 700px) {
    header {
@@ -120,6 +123,7 @@ a.notifications::after {
    header {
       padding: 32px 24px;
    }
+
    .form {
       border: none;
       gap: 16px;
@@ -129,11 +133,18 @@ a.notifications::after {
       border: 1px solid #e7eef6;
       border-radius: 10px;
    }
-   .form-filter {
+   .form__filter {
       aspect-ratio: 1 /1;
       padding: 12px;
       border: 1px solid #e7eef6;
       border-radius: 10px;
+   }
+   .loop{
+      padding-left: 16px;
+      padding-right: 0;
+   }
+   .form input[type="search"]{
+      padding: 0 8px;
    }
 }
 

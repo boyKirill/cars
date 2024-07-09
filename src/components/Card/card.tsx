@@ -58,16 +58,16 @@ export default component$<ItemProps>((props) => {
          <div class={styles.product__bottom}>
             <div class={styles.product__price}>
                <span>
-                  <b>${props.price}/ </b>
+                  <b>${props.price.toFixed(2)}/ </b>
                   <small>day</small>
                </span>
                {props.oldPrice ? (
-                  <s class={styles.old_price}>${props.oldPrice}</s>
+                  <s class={styles.old_price}>${props.oldPrice.toFixed(2)}</s>
                ) : null}
             </div>
             <a
                href="/"
-               aria-label="Rent a car {props.name}"
+               aria-label={"Rent a car" + props.name}
                class={styles.product__rental}>
                Rent Now
             </a>

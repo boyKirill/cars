@@ -199,22 +199,20 @@ export default component$(() => {
                      View All
                   </a>
                </div>
-               <ul class="products__container recom">
+               <div class="products__container recom">
                   {dataRecomCar.map((car) => (
-                     <li>
-                        <Card
-                           key={car.name}
-                           name={car.name}
-                           category={car.category}
-                           volume={car.volume}
-                           numCapacity={car.numCapacity}
-                           price={car.price}
-                           oldPrice={car.oldPrice}
-                           imageSrc={car.imageSrc}
-                        />
-                     </li>
+                     <Card
+                        key={car.name}
+                        name={car.name}
+                        category={car.category}
+                        volume={car.volume}
+                        numCapacity={car.numCapacity}
+                        price={car.price}
+                        oldPrice={car.oldPrice}
+                        imageSrc={car.imageSrc}
+                     />
                   ))}
-               </ul>
+               </div>
                <div class="showMore">
                   <a href="/category" class="showMore-btn">
                      Show more car

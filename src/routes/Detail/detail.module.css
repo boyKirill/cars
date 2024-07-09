@@ -218,6 +218,21 @@
    }
 }
 
+@media screen and (max-width:400px) {
+
+   .detail_characteristics{
+      grid-template-columns: 1fr;
+      max-width: 100%;
+   }
+   .detail_characteristics>div {
+      max-width: 100%;
+   }
+   .product__rental{
+      white-space: nowrap;
+      padding: 10px 20px;
+   }
+}
+
 /*detail--------*/
 
 /*reviews*/

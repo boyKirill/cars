@@ -1,0 +1,576 @@
+input,
+label,
+select {
+    cursor: pointer;
+}
+
+input[type="text"] {
+    cursor: text;
+}
+
+.unvisible {
+    position: fixed;
+    left: 100%;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.content {
+    background-color: #F6F7F9;
+    display: grid;
+    grid-template:
+        "form_steps selected_product" / 5fr 3fr;
+    padding: 32px;
+    gap: 32px;
+    align-items: start;
+}
+
+
+.form_steps {
+    display: grid;
+    gap: 32px;
+    grid-area: form_steps;
+}
+
+.form_step {
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    padding: 24px;
+}
+
+.step_header {
+    display: grid;
+    grid-template:
+        "step_name step_name"
+        "step_info step_number";
+    gap: 4px;
+    padding-bottom: 32px;
+}
+
+.step_name {
+    font-size: var(--fs500);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    color: #1A202C;
+    grid-area: step_name;
+}
+
+.step_info,
+.step_number {
+    font-size: var(--fs300);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #90A3BF;
+}
+
+.step_info {
+    grid-area: step_info;
+}
+
+.step_number {
+    text-align: right;
+    grid-area: step_number;
+}
+
+.from_inputs span {
+    font-size: var(--fs400);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+}
+
+.from_inputs input {
+    padding: 16px 32px;
+    background-color: #F6F7F9;
+    border-radius: 10px;
+    font-size: var(--fs300);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+}
+
+.from_inputs select {
+    padding: 16px 32px;
+    background-color: #F6F7F9;
+    border-radius: 10px;
+    font-size: var(--fs300);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    border-style: solid;
+    border-color: #F6F7F9;
+    border-right: 24px solid #F6F7F9;
+}
+
+.from_inputs input:placeholder {
+    font-size: var(--fs300);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #90A3BF;
+}
+
+
+.def_inputs {
+    display: grid;
+    row-gap: 24px;
+    column-gap: 32px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.def_inputs label {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr;
+}
+
+.meeting_places>label {
+    margin-bottom: 16px;
+}
+
+.drop_off {
+    padding-bottom: 32px;
+}
+
+/*radio*/
+label input[type="radio"] {
+    display: none;
+}
+
+label:has(input[type="radio"]) {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: var(--fs400);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+}
+
+label:has(input[type="radio"]):before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 4px solid #c2d0f8;
+}
+
+/* Checked */
+label:has(input[type="radio"]:checked)::before {
+    background-color: #3563e9;
+}
+
+/* Hover */
+label:has(input[type="radio"]):hover:before {
+    background-color: #54a6ff;
+}
+
+/*radio----*/
+
+
+/*payMethodsTab*/
+.methods_collapsible {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+.collapsible_container {
+    background-color: #F6F7F9;
+    border-radius: 10px;
+    padding: 0 24px;
+}
+
+.collapsible_container {
+    display: grid;
+    grid-template:
+        "mlabel mimage"
+        "collaps_cont collaps_cont" / 1fr auto;
+    align-items: center;
+}
+
+.method_image {
+    grid-area: mimage;
+}
+
+.collapsible_content {
+    display: none;
+    grid-area: collaps_cont;
+}
+
+
+.collapsible_input:checked~.collapsible_content {
+    display: block;
+    padding-bottom: 24px;
+}
+
+.collapsible_input {
+    display: none;
+}
+
+.collapsible_label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: var(--fs400);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    padding: 24px 0;
+}
+
+.collapsible_label:before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 50%;
+    border: 4px solid #c2d0f8;
+}
+
+/* Checked */
+.collapsible_input:checked+label:before {
+    background-color: #3563e9;
+}
+
+/* Hover */
+.collapsible_input:checked+label:hover:before {
+    background-color: #54a6ff;
+}
+
+.methods_inputs input {
+    background-color: #FFFFFF;
+}
+
+/*payMethodsTab------*/
+
+/*Confirmation*/
+.confirmation_inputs {
+    display: grid;
+    gap: 24px;
+}
+
+.confirmation_inputs label {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    padding: 16px 32px;
+    border-radius: 10px;
+    background-color: #F6F7F9;
+}
+
+.confirmation_inputs label>input {
+    transform: scale(1.51);
+    accent-color: #3563e9;
+}
+
+.confirmation_inputs label>span {
+    font-size: var(--fs300);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #1F2544;
+}
+
+.form_submit_btn {
+    font-size: var(--fs400);
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    color: #FFFFFF;
+    padding: 16px 32px;
+    background-color: #3563E9;
+    border-radius: 10px;
+    margin: 32px 0;
+}
+
+.security_container img {
+    padding-bottom: 8px;
+}
+
+.security_title {
+    font-size: var(--fs400);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #1A202C;
+}
+
+.security_info {
+    font-size: var(--fs400);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #90A3BF;
+}
+
+/*Confirmation-----*/
+
+
+/*selected_product*/
+.selected_product {
+    padding: 24px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    grid-area: selected_product;
+}
+
+.rental_summary,
+.total_price {
+    font-size: var(--fs500);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    padding-bottom: 4px;
+}
+
+.rental_info,
+.total_price_info {
+    font-size: var(--fs300);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    text-align: left;
+    color: #90A3BF;
+}
+
+.selected_car {
+    padding: 32px 0;
+    border-bottom: 1px solid #E7EEF6;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.selected_car>img {
+    max-width: 140px;
+    inline-size: 100%;
+    aspect-ratio: 16/13;
+}
+
+.selected_car_name {
+    font-size: var(--fs600);
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.03em;
+    grid-area: name;
+    white-space: nowrap;
+}
+.reviewer{
+    font-size: var(--fs300);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #596780;
+    white-space: nowrap;
+    }
+
+.selected_car_rating {
+    grid-area: rating;
+}
+
+.selected_car>div {
+    display: grid;
+    grid-template:
+        "name name"
+        "rating reviewer";
+    gap: 8px;
+    align-items: center;
+}
+
+.subtotal,
+.tax {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.subtotal {
+    padding: 32px 0 24px 0;
+}
+
+.subtotal dt,
+.tax dt {
+    font-size: var(--fs400);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #90A3BF;
+}
+
+.subtotal dd,
+.tax dd {
+    font-size: var(--fs400);
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+    color: #1A202C;
+}
+
+.promo {
+    padding: 32px 0;
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
+
+.promo input,
+.promo button {
+    padding: 16px 32px;
+    background-color: #F6F7F9;
+    border-radius: 10px 0 0 10px;
+    font-size: var(--fs300);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: -0.02em;
+}
+
+.promo input {
+    width: 100%;
+}
+
+.promo button {
+    border-radius: 0 10px 10px 0;
+}
+
+.promo button:hover {
+    background-color: #EFF0F1;
+}
+
+.bill {
+    grid-area: bill;
+    font-size: var(--fs600);
+    font-weight: 700;
+    line-height: 1.4;
+    text-align: right;
+
+}
+
+.total_price {
+    grid-area: total_price;
+}
+
+.total_price_info {
+    grid-area: total_price_info;
+}
+
+.price_box {
+    display: grid;
+    grid-template:
+        "total_price bill"
+        "total_price_info bill";
+    align-items: center;
+    column-gap: 10px;
+}
+
+/*selected_product---------*/
+
+@media screen and (max-width:1100px) {
+    .content {
+        grid-template:
+            "selected_product"
+            "form_steps" / 1fr;
+
+    }
+}
+
+@media screen and (max-width:560px) {
+    .content {
+        padding: 24px;
+    }
+
+    .def_inputs {
+        display: grid;
+        row-gap: 24px;
+        column-gap: 32px;
+        grid-template-columns: 1fr;
+    }
+
+    .step_header {
+        display: grid;
+        grid-template:
+            "step_name step_number"
+            "step_info step_info";
+        gap: 4px;
+        padding-bottom: 32px;
+        align-items: center;
+    }
+
+    .confirmation_inputs label {
+        padding: 10px 16px;
+        gap: 14px;
+    }
+
+    .confirmation_inputs label>input {
+        transform: scale(1);
+        accent-color: #3563e9;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .collapsible_container {
+        padding: 0 16px;
+    }
+
+    .form_step {
+        padding: 16px;
+    }
+
+    .collapsible_label {
+        padding: 16px 0;
+    }
+
+    .collapsible_input:checked~.collapsible_content {
+        display: block;
+        padding-bottom: 16px;
+    }
+
+    .def_inputs {
+        row-gap: 20px;
+    }
+
+    .def_inputs label {
+        gap: 12px;
+    }
+
+    .from_inputs input {
+        padding: 16px 24px;
+    }
+
+    .selected_product{
+        padding: 16px;
+    }
+    .selected_car>div {
+        grid-template:
+            "name"
+            "rating" 
+            "reviewer";
+    }
+    .selected_car_name {
+        font-size: var(--fs500);
+    }
+    .price_box {
+        display: grid;
+        grid-template:
+            "total_price bill"
+            "total_price_info bill";
+        align-items: center;
+        column-gap: 10px;
+    }
+    .total_price_info{
+        max-width: 25ch;
+    }
+}

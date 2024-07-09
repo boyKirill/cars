@@ -44,3 +44,5 @@ ul,
 menu {
    list-style-type: none;
 }
+input[type="text"], input[type="search"]{cursor:auto}
+input[type="radio"], input[type="checkbox"]{cursor: pointer;}
