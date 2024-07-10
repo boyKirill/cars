@@ -93,10 +93,11 @@ const dataRecomCar = [
 
 export default component$(() => {
    return (
-      <div class={styles.container}>
-         <Header class={styles.header} />
-         <Filterpanel class={styles.filter_panel} />
-         <div class={styles.content}>
+     
+         
+         
+         <main class={styles.content}>
+            <Filterpanel class={styles.filter_panel} />
             <form class={styles.filter_box}>
                <Filter
                   classFilter1={styles.filter1}
@@ -129,9 +130,9 @@ export default component$(() => {
                   <span class={styles.car_count}>120 Car</span>
                </div>
             </section>
-         </div>
-         <Footer class={styles.footer} />
-      </div>
+         </main>
+         
+      
    );
 });
 

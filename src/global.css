@@ -19,23 +19,31 @@
    --fs900: clamp(2.75rem, 2.38vi + 2.27rem, 5.13rem);
    --fs1000: clamp(3.43rem, 3.41vi + 2.75rem, 6.84rem);
 }
+
 * {
    padding: 0;
    margin: 0;
 }
+
 html,
 body {
    height: 100%;
 }
 
+body {
+   font-family: "Plus Jakarta Sans", sans-serif;
+}
+
 a {
    text-decoration: none;
 }
+
 input,
 button {
    border: 0;
    outline: 0;
 }
+
 button {
    cursor: pointer;
 }
@@ -44,5 +52,13 @@ ul,
 menu {
    list-style-type: none;
 }
-input[type="text"], input[type="search"]{cursor:auto}
-input[type="radio"], input[type="checkbox"]{cursor: pointer;}
+
+input[type="text"],
+input[type="search"] {
+   cursor: auto
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+   cursor: pointer;
+}

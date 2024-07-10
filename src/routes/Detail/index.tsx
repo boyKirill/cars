@@ -97,29 +97,28 @@ export default component$(() => {
       },
    ];
    const dataSelectedCar =
-    {
-        name: "Nissan GT - R",
-        category: "Sport",
-        volume: 80,
-        numCapacity: 2,
-        price: 80.0,
-        oldPrice: 100.0,
-        imageSrc: "/car-a2.png",
-        imageSrcMini: "/d1.png",
-        tabImages: [
-            "/d1.png",
-            "/d2.png",
-            "/d3.png",
-        ],
-        averageMark: 4,
-    };
+   {
+      name: "Nissan GT - R",
+      category: "Sport",
+      volume: 80,
+      numCapacity: 2,
+      price: 80.0,
+      oldPrice: 100.0,
+      imageSrc: "/car-a2.png",
+      imageSrcMini: "/d1.png",
+      tabImages: [
+         "/d1.png",
+         "/d2.png",
+         "/d3.png",
+      ],
+      averageMark: 4,
+   };
 
    return (
       <>
-         <div class={styles.container}>
-            <Header class={styles.header} />
+         <main class={styles.content}>
             <Filterpanel class={styles.filter_panel} />
-            <div class={styles.content}>
+            <div class={styles.content_container}>
                <div class={styles.detail_container}>
                   <div class={styles.gallery}>
                      <Tabs imagesSrc={dataSelectedCar.tabImages} />
@@ -130,7 +129,7 @@ export default component$(() => {
                         <div>
                            <h2 class={styles.car_name}>{dataSelectedCar.name}</h2>
                            <div class={styles.reviewer_box}>
-                              <Rating mark={dataSelectedCar.averageMark}/>
+                              <Rating mark={dataSelectedCar.averageMark} />
                               <span class={styles.reviewer}>440+ Reviewer</span>
                            </div>
 
@@ -193,7 +192,7 @@ export default component$(() => {
                                  </div>
                                  <div>
                                     <div class={styles.date}>{user.reviewsDate}</div>
-                                    <Rating class={styles.reviews_marks} mark={user.userMark}/>
+                                    <Rating class={styles.reviews_marks} mark={user.userMark} />
                                  </div>
                               </div>
                               <p class={styles.reviews_content}>{user.userReview}</p>
@@ -204,7 +203,7 @@ export default component$(() => {
                </section>
                <section class={[styles.products, styles.product1]}>
                   <div class={[styles.products_category, styles.popular_category]}>
-                     <h2 class={styles.category_name}>Popular Car</h2>
+                     <h2 class={styles.category_name}>Recent Car</h2>
                      <a href="/" class={styles.showAll}>
                         View All
                      </a>
@@ -246,11 +245,8 @@ export default component$(() => {
                      ))}
                   </div>
                </section>
-
-
             </div>
-            <Footer class={styles.footer} />
-         </div>
+         </main>
       </>
    );
 });

@@ -1,9 +1,8 @@
 import { component$ } from "@builder.io/qwik";
 import { DocumentHead } from "@builder.io/qwik-city";
-import Header from "../components/Header/header";
-import Footer from "../components/Footer/footer";
 import Filter from "../components/Filter/filter";
 import Card from "../components/Card/card";
+import styles from "./index.module.css"
 
 const dataPopularCar = [
    {
@@ -120,109 +119,107 @@ const dataRecomCar = [
 
 export default component$(() => {
    return (
-      <div class="container">
-         <Header />
-         <div class="content">
-            <form class="banners">
-               <div class="banner1">
-                  <article>
-                     <h2 class="title-card">
-                        The Best Platform for Car Rental
-                     </h2>
-                     <div class="desc">
-                        Ease of doing a car rental safely and reliably. Of
-                        course at a low price.
-                     </div>
-                     <a class="rental-link" href="/" aria-label="{Car name}">
-                        Rental Car
-                     </a>
-                     <div class="image">
-                        <img
-                           src="/car-a1.png"
-                           alt="Some text describing the picture"
-                        />
-                     </div>
-                  </article>
-               </div>
-               <div class="banner2">
-                  <article>
-                     <h2 class="title-card">
-                        Easy way to rent a car at a low price
-                     </h2>
-                     <div class="desc">
-                        Providing cheap car rental services and safe and
-                        comfortable facilities.
-                     </div>
-                     <a class="rental-link" href="/" aria-label="{Car name}">
-                        Rental Car
-                     </a>
-                     <div class="image">
-                        <img
-                           src="/car-a2.png"
-                           alt="Some text describing the picture"
-                        />
-                     </div>
-                  </article>
-               </div>
-               <Filter
-                  classFilter1="filter1"
-                  classFilter2="filter2"
-                  classBtnRevers="btn_revers"
-               />
-            </form>
-            <section class="products product1">
-               <div class="products__category popular-category">
-                  <h2 class="category-name">Popular Car</h2>
-                  <a href="/" class="showAll">
-                     View All
+      <main class={styles.content}>
+         <form class={styles.banners}>
+            <div class={styles.banner1}>
+               <article>
+                  <h2 class={styles.title_card}>
+                     The Best Platform for Car Rental
+                  </h2>
+                  <div class={styles.desc}>
+                     Ease of doing a car rental safely and reliably. Of
+                     course at a low price.
+                  </div>
+                  <a class={styles.rental_link} href="/" aria-label="{Car name}">
+                     Rental Car
                   </a>
-               </div>
-               <div class="products__container horizontal_media_scroller">
-                  {dataPopularCar.map((car) => (
-                     <Card
-                        key={car.name}
-                        name={car.name}
-                        category={car.category}
-                        volume={car.volume}
-                        numCapacity={car.numCapacity}
-                        price={car.price}
-                        oldPrice={car.oldPrice}
-                        imageSrc={car.imageSrc}
+                  <div class={styles.image}>
+                     <img
+                        src="/car-a1.png"
+                        alt="Some text describing the picture"
                      />
-                  ))}
-               </div>
-            </section>
-            <section class="products product2">
-               <div class="products__category">
-                  <h2 class="category-name">Recomendation Car</h2>
-                  <a href="/" class="showAll invisible">
-                     View All
+                  </div>
+               </article>
+            </div>
+            <div class={styles.banner2}>
+               <article>
+                  <h2 class={styles.title_card}>
+                     Easy way to rent a car at a low price
+                  </h2>
+                  <div class={styles.desc}>
+                     Providing cheap car rental services and safe and
+                     comfortable facilities.
+                  </div>
+                  <a class={styles.rental_link} href="/" aria-label="{Car name}">
+                     Rental Car
                   </a>
-               </div>
-               <div class="products__container recom">
-                  {dataRecomCar.map((car) => (
-                     <Card
-                        key={car.name}
-                        name={car.name}
-                        category={car.category}
-                        volume={car.volume}
-                        numCapacity={car.numCapacity}
-                        price={car.price}
-                        oldPrice={car.oldPrice}
-                        imageSrc={car.imageSrc}
+                  <div class={styles.image}>
+                     <img
+                        src="/car-a2.png"
+                        alt="Some text describing the picture"
                      />
-                  ))}
-               </div>
-               <div class="showMore">
-                  <a href="/category" class="showMore-btn">
-                     Show more car
-                  </a>
-                  <span class="car-count">120 Car</span>
-               </div>
-            </section>
-         </div>
-         <Footer />
-      </div>
+                  </div>
+               </article>
+            </div>
+            <Filter
+               classFilter1={styles.filter1}
+               classFilter2={styles.filter2}
+               classBtnRevers={styles.btn_revers}
+            />
+         </form>
+         <section class={[styles.products, styles.product1]}>
+            <div class={[styles.products__category, styles.popular_category]}>
+               <h2 class={styles.category_name}>Popular Car</h2>
+               <a href="/" class={styles.showAll}>
+                  View All
+               </a>
+            </div>
+            <div class={[styles.products__container, styles.horizontal_media_scroller]}>
+               {dataPopularCar.map((car) => (
+                  <Card
+                     key={car.name}
+                     name={car.name}
+                     category={car.category}
+                     volume={car.volume}
+                     numCapacity={car.numCapacity}
+                     price={car.price}
+                     oldPrice={car.oldPrice}
+                     imageSrc={car.imageSrc}
+                  />
+               ))}
+            </div>
+         </section>
+         <section class={[styles.products, styles.product2]}>
+            <div class={styles.products__category}>
+               <h2 class={styles.category_name}>Recomendation Car</h2>
+               <a href="/" class={[styles.showAll, styles.invisible]}>
+                  View All
+               </a>
+            </div>
+            <div class={[styles.products__container, styles.recom]}>
+               {dataRecomCar.map((car) => (
+
+                  <Card
+                     key={car.name}
+                     name={car.name}
+                     category={car.category}
+                     volume={car.volume}
+                     numCapacity={car.numCapacity}
+                     price={car.price}
+                     oldPrice={car.oldPrice}
+                     imageSrc={car.imageSrc}
+                  />
+
+               ))}
+            </div>
+            <div class={styles.showMore}>
+               <a href="/category" class={styles.showMore_btn}>
+                  Show more car
+               </a>
+               <span class={styles.car_count}>120 Car</span>
+            </div>
+         </section>
+      </main>
    );
 });
 
