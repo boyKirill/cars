@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import Filterpanel from "../../components/Filterpanel/filterpanel";
 import Tabs from "../../components/Tabs/tabs";
 import styles from "./detail.module.css";
-import { DocumentHead } from "@builder.io/qwik-city";
+import { DocumentHead, Link } from "@builder.io/qwik-city";
 import Rating from "~/components/Rating/rating";
 import Card from "~/components/Card/card";
 
@@ -165,12 +165,8 @@ export default component$(() => {
                            </span><s class={styles.old_price}>${dataSelectedCar.oldPrice.toFixed(2)}</s>
 
                         </div>
-                        <a
-                           href="/"
-                           aria-label={"Rent a car" + dataSelectedCar.name}
-                           class={styles.product__rental}>
-                           Rent Now
-                        </a>
+                        <Link class={styles.product__rental} href="/Payment" aria-label={"Rent a car" + dataSelectedCar.name}>Rent Now</Link>
+                        
                      </div>
 
                   </div>

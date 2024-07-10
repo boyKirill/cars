@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { DocumentHead } from "@builder.io/qwik-city";
+import { DocumentHead, Link } from "@builder.io/qwik-city";
 import Card from "../../components/Card/card";
 import Filterpanel from "../../components/Filterpanel/filterpanel";
 import Filter from "../../components/Filter/filter";
@@ -91,46 +91,44 @@ const dataRecomCar = [
 
 export default component$(() => {
    return (
-     
-         
-         
-         <main class={styles.content}>
-            <Filterpanel class={styles.filter_panel} />
-            <form class={styles.filter_box}>
-               <Filter
-                  classFilter1={styles.filter1}
-                  classFilter2={styles.filter2}
-                  classBtnRevers={styles.btn_revers}
-               />
-            </form>
-            <section class={styles.products}>
-               <h2 class={styles.category_name + " " + styles.unvisible}>
-                  Selected cars
-               </h2>
-               <div class={styles.products__container}>
-                  {dataRecomCar.map((car) => (
-                     <Card
-                        key={car.name}
-                        name={car.name}
-                        category={car.category}
-                        volume={car.volume}
-                        numCapacity={car.numCapacity}
-                        price={car.price}
-                        oldPrice={car.oldPrice}
-                        imageSrc={car.imageSrc}
-                     />
-                  ))}
-               </div>
-               <div class={styles.showMore}>
-                  <a href="/category" class={styles.showMore_btn}>
-                     Show more car
-                  </a>
-                  <span class={styles.car_count}>120 Car</span>
-               </div>
-            </section>
-         </main>
-         
-      
+
+
+
+      <main class={styles.content}>
+         <Filterpanel class={styles.filter_panel} />
+         <form class={styles.filter_box}>
+            <Filter
+               classFilter1={styles.filter1}
+               classFilter2={styles.filter2}
+               classBtnRevers={styles.btn_revers}
+            />
+         </form>
+         <section class={styles.products}>
+            <h2 class={styles.category_name + " " + styles.unvisible}>
+               Selected cars
+            </h2>
+            <div class={styles.products__container}>
+               {dataRecomCar.map((car) => (
+                  <Card
+                     key={car.name}
+                     name={car.name}
+                     category={car.category}
+                     volume={car.volume}
+                     numCapacity={car.numCapacity}
+                     price={car.price}
+                     oldPrice={car.oldPrice}
+                     imageSrc={car.imageSrc}
+                  />
+               ))}
+            </div>
+            <div class={styles.showMore}>
+               <Link class={styles.showMore_btn} href="/Category" >Show more car</Link>
+               <span class={styles.car_count}>120 Car</span>
+            </div>
+         </section>
+      </main>
+
+
    );
 });
 

@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./card.module.css";
+import { Link } from "@builder.io/qwik-city";
 
 interface ItemProps {
    name: string;
@@ -65,12 +66,8 @@ export default component$<ItemProps>((props) => {
                   <s class={styles.old_price}>${props.oldPrice.toFixed(2)}</s>
                ) : null}
             </div>
-            <a
-               href="/"
-               aria-label={"Rent a car" + props.name}
-               class={styles.product__rental}>
-               Rent Now
-            </a>
+            <Link class={styles.product__rental} href="/Detail" aria-label={"Rent a car" + props.name}>Rent Now</Link>
+           
          </div>
       </article>
    );

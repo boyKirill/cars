@@ -4,6 +4,7 @@ import ImgSearch from '~/media/search.svg?jsx';
 import ImgFilter from '~/media/filter.svg?jsx';
 import ImgLogo from '~/media/Logo.svg?jsx';
 import styles from "./header.module.css";
+import { Link } from "@builder.io/qwik-city";
 
 interface ItemProps {
    class?: string;
@@ -14,9 +15,7 @@ export default component$<ItemProps>((props) => {
       <header class={props.class}>
          <h1 class={styles.logo}>
             <span class={styles.invisible}>The morent logo</span>
-            <a href="/">
-               <ImgLogo />
-            </a>
+            <Link class={styles.rental_link} href="/" aria-label="Logo"><ImgLogo /></Link>
          </h1>
 
          <form class={styles.form}>

@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { DocumentHead } from "@builder.io/qwik-city";
+import { DocumentHead, Link } from "@builder.io/qwik-city";
 import Filter from "../components/Filter/filter";
 import Card from "../components/Card/card";
 import styles from "./index.module.css"
@@ -130,9 +130,7 @@ export default component$(() => {
                      Ease of doing a car rental safely and reliably. Of
                      course at a low price.
                   </div>
-                  <a class={styles.rental_link} href="/" aria-label="{Car name}">
-                     Rental Car
-                  </a>
+                  <Link class={styles.rental_link} href="/Detail" aria-label="{Car name}">Show Details</Link>
                   <div class={styles.image}>
                      <img
                         src="/car-a1.png"
@@ -150,9 +148,7 @@ export default component$(() => {
                      Providing cheap car rental services and safe and
                      comfortable facilities.
                   </div>
-                  <a class={styles.rental_link} href="/" aria-label="{Car name}">
-                     Rental Car
-                  </a>
+                  <Link class={styles.rental_link} href="/Detail" aria-label="{Car name}">Show Details</Link>
                   <div class={styles.image}>
                      <img
                         src="/car-a2.png"
@@ -213,9 +209,7 @@ export default component$(() => {
                ))}
             </div>
             <div class={styles.showMore}>
-               <a href="/category" class={styles.showMore_btn}>
-                  Show more car
-               </a>
+               <Link class={styles.showMore_btn} href="/Category" >Show more car</Link>
                <span class={styles.car_count}>120 Car</span>
             </div>
          </section>

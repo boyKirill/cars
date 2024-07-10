@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import ImgLogo from '~/media/Logo.svg?jsx';
 import styles from "./footer.module.css";
+import { Link } from "@builder.io/qwik-city";
 
 interface ItemProps {
    class?: string;
@@ -12,9 +13,7 @@ export default component$<ItemProps>((props) => {
          <div class={styles.top}>
             <div class={styles.information}>
                <h2>
-                  <a href="/" class={styles.logo}>
-                     <ImgLogo/>
-                  </a>
+               <Link class={styles.rental_link} href="/" aria-label="Logo"><ImgLogo /></Link>
                </h2>
                <p class={styles.text}>
                   Our vision is to provide convenience and help increase your
