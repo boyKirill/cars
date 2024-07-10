@@ -6,8 +6,7 @@ interface ItemProps {
 }
 
 export default component$<ItemProps>((props) => {
-   const outputInput = useSignal(50);
-   /* const sum  = useSignal(0); */
+   const outputInput = useSignal<number>(50);
 
    return (
       <>
@@ -90,10 +89,14 @@ export default component$<ItemProps>((props) => {
                      type="range"
                      min="0"
                      max="100"
-                     onInput$={(event) =>
-                        (outputInput.value = event.target.value)
-                     }
+                     onInput$={(event) => {
+                        const target = event.target as HTMLInputElement | null;
+                        if (target) {
+                           outputInput.value = Number(target.value);
+                        }
+                     }}
                   />
+
 
                   <span>Max. ${outputInput}</span>
                </div>

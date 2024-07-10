@@ -1,7 +1,5 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./payment.module.css"
-import Header from "~/components/Header/header";
-import Footer from "~/components/Footer/footer";
 import { DocumentHead } from "@builder.io/qwik-city";
 import Rating from "~/components/Rating/rating";
 

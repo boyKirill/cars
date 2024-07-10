@@ -1,7 +1,5 @@
-import { component$, useSignal, $ } from "@builder.io/qwik";
+import { component$ } from "@builder.io/qwik";
 import Filterpanel from "../../components/Filterpanel/filterpanel";
-import Header from "../../components/Header/header";
-import Footer from "../../components/Footer/footer";
 import Tabs from "../../components/Tabs/tabs";
 import styles from "./detail.module.css";
 import { DocumentHead } from "@builder.io/qwik-city";

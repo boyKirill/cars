@@ -3,8 +3,6 @@ import { DocumentHead } from "@builder.io/qwik-city";
 import Card from "../../components/Card/card";
 import Filterpanel from "../../components/Filterpanel/filterpanel";
 import Filter from "../../components/Filter/filter";
-import Footer from "../../components/Footer/footer";
-import Header from "../../components/Header/header";
 import styles from "./category.module.css";
 
 const dataRecomCar = [
