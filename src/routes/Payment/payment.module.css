@@ -43,6 +43,11 @@ input[type="text"] {
     padding: 24px;
 }
 
+.form_step legend{
+    position: absolute;
+    left: 100%;
+}
+
 .step_header {
     display: grid;
     grid-template:

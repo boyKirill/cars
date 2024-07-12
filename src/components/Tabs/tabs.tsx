@@ -16,7 +16,7 @@ export default component$((props: ItemProps) => {
       <div id={styles["image-container"]}>
         <img src={selectedImage.value} />
       </div>
-      <ul id={styles["thumbnails"]}>
+      <div id={styles["thumbnails"]}>
         {props.imagesSrc.map((image) => (
           <img
             key={image}
@@ -29,7 +29,7 @@ export default component$((props: ItemProps) => {
             }}
           />
         ))}
-      </ul>
+      </div>
     </div>
   );
 });

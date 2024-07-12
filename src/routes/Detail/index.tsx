@@ -139,24 +139,26 @@ export default component$(() => {
 
                      </form>
                      <p class={styles.detail_desc}>NISMO has become the embodiment of Nissan's outstanding performance, inspired by the most unforgiving proving ground, the "race track".</p>
-                     <div class={styles.detail_characteristics}>
+
+                     <dl class={styles.detail_characteristics_list}>
                         <div>
-                           <dt class={styles.characteristic}>Type Car</dt>
-                           <dd class={styles.characteristic_info}>{dataSelectedCar.category}</dd>
+                           <dt>Type Car</dt>
+                           <dd>{dataSelectedCar.category}</dd>
                         </div>
                         <div>
-                           <dt class={styles.characteristic}>Steering</dt>
-                           <dd class={styles.characteristic_info}>Manual</dd>
+                           <dt>Steering</dt>
+                           <dd>Manual</dd>
                         </div>
                         <div>
-                           <dt class={styles.characteristic}>Capacity</dt>
-                           <dd class={styles.characteristic_info}>{dataSelectedCar.numCapacity} Person</dd>
+                           <dt>Capacity</dt>
+                           <dd>{dataSelectedCar.numCapacity} Person</dd>
                         </div>
                         <div>
-                           <dt class={styles.characteristic}>Gasoline</dt>
-                           <dd class={styles.characteristic_info}>{dataSelectedCar.volume}L</dd>
+                           <dt>Gasoline</dt>
+                           <dd>{dataSelectedCar.volume}L</dd>
                         </div>
-                     </div>
+                     </dl>
+
                      <div class={styles.detail_bottom}>
                         <div class={styles.product__price}>
                            <span>
@@ -166,7 +168,7 @@ export default component$(() => {
 
                         </div>
                         <Link class={styles.product__rental} href="/Payment" aria-label={"Rent a car" + dataSelectedCar.name}>Rent Now</Link>
-                        
+
                      </div>
 
                   </div>

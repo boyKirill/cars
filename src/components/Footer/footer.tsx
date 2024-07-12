@@ -13,7 +13,7 @@ export default component$<ItemProps>((props) => {
          <div class={styles.top}>
             <div class={styles.information}>
                <h2>
-               <Link class={styles.rental_link} href="/" aria-label="Logo"><ImgLogo /></Link>
+                  <Link class={styles.rental_link} href="/" aria-label="Logo"><ImgLogo /></Link>
                </h2>
                <p class={styles.text}>
                   Our vision is to provide convenience and help increase your

@@ -39,7 +39,7 @@ a {
 }
 
 input,
-button {
+button, fieldset {
    border: 0;
    outline: 0;
 }

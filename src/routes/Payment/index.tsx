@@ -26,8 +26,9 @@ export default component$(() => {
     return (
         <>
             <form action="" class={styles.content}>
-                <ul class={styles.form_steps}>
-                    <li class={[styles.form_step, styles.form_step_biling]}>
+                <div class={styles.form_steps}>
+                    <fieldset class={[styles.form_step, styles.form_step_biling]}>
+                        <legend>Billing Info</legend>
                         <div class={styles.step_header}>
                             <div class={styles.step_name}>Billing Info</div>
                             <div class={styles.step_info}>Please enter your billing info</div>
@@ -51,14 +52,16 @@ export default component$(() => {
                                 <input placeholder="Town or city" type="text" />
                             </label>
                         </div>
-                    </li>
-                    <li class={[styles.form_step]}>
+                    </fieldset>
+                    <fieldset class={[styles.form_step]}>
+                        <legend>Rental Info</legend>
                         <div class={styles.step_header}>
                             <div class={styles.step_name}>Rental Info</div>
                             <div class={styles.step_info}>Please select your rental date</div>
                             <div class={styles.step_number}>Step 2 of 4</div>
                         </div>
                         <div class={[styles.meeting_places, styles.drop_off]}>
+
                             <label>
                                 <input type="radio" />
                                 <span>Pick - Up</span>
@@ -84,6 +87,7 @@ export default component$(() => {
                             </div>
                         </div>
                         <div class={styles.meeting_places}>
+
                             <label>
                                 <input type="radio" />
                                 <span>Drop - Off</span>
@@ -108,10 +112,9 @@ export default component$(() => {
                                 </label>
                             </div>
                         </div>
-
-
-                    </li>
-                    <li class={[styles.form_step, styles.payment_method]}>
+                    </fieldset>
+                    <fieldset class={[styles.form_step, styles.payment_method]}>
+                        <legend>Payment Method</legend>
                         <div class={styles.step_header}>
                             <div class={styles.step_name}>Payment Method</div>
                             <div class={styles.step_info}>Please enter your payment method</div>
@@ -172,14 +175,15 @@ export default component$(() => {
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li class={[styles.form_step, styles.form_step_confirmation]}>
+                    </fieldset>
+                    <fieldset class={[styles.form_step, styles.form_step_confirmation]}>
+                        <legend>Confirmation</legend>
                         <div class={styles.step_header}>
                             <div class={styles.step_name}>Confirmation</div>
                             <div class={styles.step_info}>We are getting to the end. Just few clicks and your rental is ready!</div>
                             <div class={styles.step_number}>Step 4 of 4</div>
                         </div>
-                        <div class={[styles.confirmation_inputs]}>
+                        <fieldset class={[styles.confirmation_inputs]}>
                             <label>
                                 <input type="checkbox" />
                                 <span class={styles.input_title}>I agree with sending an Marketing and newsletter emails. No spam, promissed!</span>
@@ -188,15 +192,15 @@ export default component$(() => {
                                 <input type="checkbox" />
                                 <span class={styles.input_title}>I agree with our terms and conditions and privacy policy.</span>
                             </label>
-                        </div>
+                        </fieldset>
                         <button class={styles.form_submit_btn} type="submit">Rent Now</button>
                         <div class={styles.security_container}>
                             <img src="/security-safety.svg" alt="security icon" />
                             <div class={styles.security_title}>All your data are safe</div>
                             <div class={styles.security_info}>We are using the most advanced security to provide you the best experience ever.</div>
                         </div>
-                    </li>
-                </ul>
+                    </fieldset>
+                </div>
                 <div class={styles.selected_product}>
                     <div class={styles.rental_summary}>Rental Summary</div>
                     <p class={styles.rental_info}>Prices may change depending on the length of the rental and the price of your rental car.</p>
